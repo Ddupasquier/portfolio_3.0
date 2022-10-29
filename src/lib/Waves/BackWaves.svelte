@@ -1,7 +1,7 @@
 <div class="back-waves">
 	<div class="top-wave">
 		<svg
-			viewBox="0 0 900 600"
+			viewBox="100 0 900 600"
 			xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink"
 			version="1.1"
@@ -64,14 +64,18 @@
 <style lang="scss">
 	.back-waves {
 		position: absolute;
-		top: -15%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		top: -20rem;
+		left: 1rem;
+		left: 0;
 		width: 100%;
 		overflow: hidden;
 		z-index: -1;
 		.top-wave {
 			svg {
-				min-height: 1000px;
-				max-height: 2000px;
+				height: 1500px;
 			}
 		}
 		.bottom-wave {

@@ -21,7 +21,7 @@
 		justify-content: center;
 		flex-direction: column;
 		width: 100%;
-		height: 60rem;
+		height: 70rem;
 		text-align: center;
 		background: none;
 		z-index: 1;

@@ -46,19 +46,28 @@
 			/>
 		</svg>
 	</div>
+	<div class="hide-artifact" />
 </div>
 
 <style lang="scss">
+	.hide-artifact {
+		position: absolute;
+		top: 91rem;
+		left: 0;
+		width: 100%;
+		height: 2rem;
+		z-index: 10;
+		background: rgb(0, 0, 0);
+	}
 	.front-waves {
 		position: absolute;
-		top: -30rem;
+		top: -30em;
 		width: 100%;
 		overflow: hidden;
 		z-index: 1;
 		.top-wave {
 			svg {
-				min-height: 1000px;
-				max-height: 2200px;
+				height: 1500px;
 			}
 		}
 		.bottom-wave {

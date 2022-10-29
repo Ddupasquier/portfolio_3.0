@@ -56,7 +56,7 @@
 <style lang="scss">
 	.snow-container {
 		position: absolute;
-		top: 40rem;
+		top: 55rem;
 		width: 100%;
 		height: 50rem;
 		align-self: center;

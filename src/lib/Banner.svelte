@@ -11,8 +11,14 @@
 		display: flex;
 		align-self: center;
 		position: absolute;
-		top: 34rem;
+		top: 62rem;
 		z-index: 10;
 		font-size: 5rem;
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2rem;
+		}
 	}
 </style>

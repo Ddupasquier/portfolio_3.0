@@ -9,7 +9,7 @@
 
 	let hideScroll = true;
 	let scroll: number = 0;
-	$: aboveVisible = scroll < 1500;
+	$: aboveVisible = scroll < 2000;
 </script>
 
 <svelte:window bind:scrollY={scroll} />
@@ -46,5 +46,9 @@
 	.hidescroll {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
+	}
+
+	main {
+		z-index: 3;
 	}
 </style>

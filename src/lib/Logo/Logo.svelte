@@ -102,10 +102,11 @@
 	}
 
 	.logo-container {
+		position: relative;
+		top: 25vh;
 		width: fit-content;
 		height: fit-content;
 		margin: 0 auto;
-		position: relative;
 		z-index: 0;
 	}
 
