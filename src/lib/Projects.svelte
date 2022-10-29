@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
 	let scroll: number;
 	$: visible = scroll > 550;
@@ -8,44 +9,64 @@
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	};
 
+	interface Photos {
+		src: string;
+		fadeDelay: number;
+	}
+
+	let photos: Photos | any = [];
+	const nums = [421, 422, 423, 424, 425, 426, 427, 428];
+
 	const duration = 3000;
 	const minFadeDelay = 100;
 	const maxFadeDelay = 1000;
 
-	const photos = [450, 451, 452, 453, 454, 455, 456, 457];
+	onMount(async () => {
+		const promises = nums.map(async (num) => {
+			const src = `https://picsum.photos/${num}`;
+			const fadeDelay = random(minFadeDelay, maxFadeDelay);
+			return { src, fadeDelay };
+		});
+		photos = await Promise.all(promises);
+	});
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
+<div class="proj-header">Projects</div>
 <div class="gallery">
 	{#each photos as photo}
-		{#if visible}
-			<div
-				class="gallery-item"
-				id="gallery-item-4"
-				in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration: duration }}
-				out:fade={{ duration: random(minFadeDelay, maxFadeDelay) }}
-			>
-				<img src="https://picsum.photos/{photo}" alt="4" class="gallery-image" />
-				<div class="gallery-item-info">
-					<ul>
-						<li class="gallery-item-likes">
-							<span class="visually-hidden">Likes:</span><i
-								class="fas fa-heart"
-								aria-hidden="true"
-							/>
-							56
-						</li>
-						<li class="gallery-item-comments">
-							<span class="visually-hidden">Comments:</span><i
-								class="fas fa-comment"
-								aria-hidden="true"
-							/> 2
-						</li>
-					</ul>
-				</div>
-			</div>
-		{/if}
+		<div class="gallery-item" id="gallery-item-4">
+			{#if visible}
+				<img
+					src={photo.src}
+					alt="random"
+					class="gallery-image"
+					in:fade={{ delay: photo.fadeDelay, duration }}
+					out:fade={{ duration }}
+				/>
+				{#if photo.src}
+					<div
+						class="gallery-item-info"
+						in:fade={{ delay: photo.fadeDelay + 400, duration }}
+						out:fade={{ duration }}
+					>
+						<ul>
+							<li class="gallery-item-likes">
+								<span class="visually-hidden">Likes:</span>
+								<i class="fas fa-heart" aria-hidden="true" /> 56
+							</li>
+							<li class="gallery-item-comments">
+								<span class="visually-hidden">Comments:</span>
+								<i class="fas fa-comment" aria-hidden="true" /> 3
+							</li>
+						</ul>
+					</div>
+				{/if}
+			{/if}
+		</div>
+	{:else}
+		Loading...
 	{/each}
 </div>
 
@@ -91,5 +112,11 @@
 		.gallery {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	.proj-header {
+		font-size: 2rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
 	}
 </style>

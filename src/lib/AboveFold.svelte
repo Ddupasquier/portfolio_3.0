@@ -31,15 +31,28 @@
 		margin-top: 3rem;
 		text-align: center;
 		background: none;
+		z-index: 1;
 		h1 {
 			font-size: 6rem;
 			margin: 0;
-			z-index: 1;
 		}
 		h2 {
 			font-size: 2rem;
 			margin: 0;
-			z-index: 1;
+		}
+	}
+
+	@media (max-width: 600px) {
+		header {
+			h1 {
+				font-size: 4rem;
+			}
+			h2 {
+				font-size: 1.5rem;
+			}
+		}
+		header {
+			z-index: 3;
 		}
 	}
 </style>
