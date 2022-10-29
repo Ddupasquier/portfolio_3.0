@@ -3,7 +3,7 @@
 	import GlobalStylesProvider from '$lib/GlobalStylesProvider.svelte';
 	import FrontWaves from '$lib/Waves/FrontWaves.svelte';
 	import BackWaves from '$lib/Waves/BackWaves.svelte';
-	// import WholeWave from '$lib/WholeWave.svelte';
+	import Footer from '$lib/Footer.svelte';
 </script>
 
 <GlobalStylesProvider>
@@ -14,7 +14,7 @@
 		<main>
 			<slot />
 		</main>
-		<footer>Footer</footer>
+		<Footer />
 	</div>
 </GlobalStylesProvider>
 

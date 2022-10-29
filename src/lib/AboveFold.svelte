@@ -3,14 +3,14 @@
 
 	import Logo from './Logo.svelte';
 	let scroll: number;
-	$: visible = scroll < 755;
+	$: visible = scroll < 800;
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
 <header>
 	{#if visible}
-		<div in:fade={{ delay: 500 }} out:fade={{ duration: 200 }}>
+		<div in:fade={{ delay: 0 }} out:fade={{ duration: 200 }}>
 			<Logo />
 		</div>
 	{/if}
