@@ -4,18 +4,24 @@
 	import FrontWaves from '$lib/Waves/FrontWaves.svelte';
 	import BackWaves from '$lib/Waves/BackWaves.svelte';
 	import Footer from '$lib/Footer.svelte';
-	import Rain from '$lib/Snow/Snow.svelte';
+	import Snow from '$lib/Snow/Snow.svelte';
 	import Banner from '$lib/Banner.svelte';
 
 	let hideScroll = true;
+	let scroll: number = 0;
+	$: aboveVisible = scroll < 1500;
 </script>
+
+<svelte:window bind:scrollY={scroll} />
 
 <GlobalStylesProvider>
 	<div class="main-container" class:hideScroll>
 		<AboveFold />
-		<Rain />
-		<BackWaves />
-		<FrontWaves />
+		{#if aboveVisible}
+			<Snow />
+			<BackWaves />
+			<FrontWaves />
+		{/if}
 		<Banner />
 		<main>
 			<slot />

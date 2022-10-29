@@ -47,7 +47,7 @@
 	<ul>
 		{#each Array(50) as _, i}
                   <li class="snowflake">
-                        <img src={icons[Math.floor(Math.random() * icons.length)]} alt="icon" />
+                        <img src={icons[Math.floor(Math.random() * icons.length)]} alt="icon" width="40px" height="40px" />
                   </li>
             {/each}
 	</ul>
@@ -66,7 +66,7 @@
 			margin: 0;
 			padding: 0;
 			.snowflake {
-				--size: 1rem;
+				--size: .6rem;
 				position: absolute;
 				top: -5vh;
 				width: var(--size);
@@ -90,7 +90,7 @@
 
 	@for $i from 1 through 50 {
 		.snowflake:nth-child(#{$i}) {
-			--size: #{random(5) * 1.5}vw;
+			--size: #{random(5) * 2}vw;
 			--left-ini: #{random(20) - 10}vw;
 			--left-end: #{random(20) - 10}vw;
 			left: #{random(100)}vw;
