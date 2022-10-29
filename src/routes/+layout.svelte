@@ -4,7 +4,8 @@
 	import FrontWaves from '$lib/Waves/FrontWaves.svelte';
 	import BackWaves from '$lib/Waves/BackWaves.svelte';
 	import Footer from '$lib/Footer.svelte';
-	import Rain from '$lib/Rain/Rain.svelte';
+	import Rain from '$lib/Snow/Snow.svelte';
+	import Spacer from '$lib/Spacer.svelte';
 </script>
 
 <GlobalStylesProvider>

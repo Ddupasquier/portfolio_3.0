@@ -56,7 +56,7 @@
 <style lang="scss">
 	.snow-container {
 		position: absolute;
-		top: 22%;
+		top: 62%;
 		width: 100%;
 		height: 50rem;
 		align-self: center;
@@ -90,7 +90,7 @@
 
 	@for $i from 1 through 50 {
 		.snowflake:nth-child(#{$i}) {
-			--size: #{random(5) * 0.8}vw;
+			--size: #{random(5) * 1.5}vw;
 			--left-ini: #{random(20) - 10}vw;
 			--left-end: #{random(20) - 10}vw;
 			left: #{random(100)}vw;
