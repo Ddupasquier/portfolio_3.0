@@ -5,6 +5,7 @@
 	import BackWaves from '$lib/Waves/BackWaves.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import Rain from '$lib/Snow/Snow.svelte';
+	import Banner from '$lib/Banner.svelte';
 
 	let hideScroll = true;
 </script>
@@ -15,6 +16,7 @@
 		<Rain />
 		<BackWaves />
 		<FrontWaves />
+		<Banner />
 		<main>
 			<slot />
 		</main>

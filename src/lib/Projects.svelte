@@ -45,13 +45,14 @@
 				in:fade={{ delay: photo.fadeDelay, duration }}
 				out:fade={{ duration }}
 			/>
-			<!-- {#if loaded}
+			{#if loaded}
 				<div
 					class="gallery-item-info"
 					in:fade={{ delay: photo.fadeDelay + 400, duration }}
 					out:fade={{ duration }}
 				>
-					<ul>
+					Placeholder
+					<!-- <ul>
 						<li class="gallery-item-likes">
 							<span class="visually-hidden">Likes:</span>
 							<i class="fas fa-heart" aria-hidden="true" /> 56
@@ -60,9 +61,9 @@
 							<span class="visually-hidden">Comments:</span>
 							<i class="fas fa-comment" aria-hidden="true" /> 3
 						</li>
-					</ul>
+					</ul> -->
 				</div>
-			{/if} -->
+			{/if}
 		</div>
 	{:else}
 		Loading...
