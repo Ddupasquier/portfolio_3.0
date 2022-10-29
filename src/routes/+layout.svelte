@@ -5,15 +5,16 @@
 	import BackWaves from '$lib/Waves/BackWaves.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import Rain from '$lib/Snow/Snow.svelte';
-	import Spacer from '$lib/Spacer.svelte';
+
+	let hideScroll = true;
 </script>
 
 <GlobalStylesProvider>
-	<div class="main-container">
+	<div class="main-container" class:hideScroll>
 		<AboveFold />
+		<Rain />
 		<BackWaves />
 		<FrontWaves />
-		<Rain />
 		<main>
 			<slot />
 		</main>
@@ -29,5 +30,13 @@
 		flex-direction: column;
 		min-height: 100vh;
 		justify-content: space-between;
+	}
+
+	.hideScroll::-webkit-scrollbar {
+		display: none;
+	}
+	.hidescroll {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
 	}
 </style>

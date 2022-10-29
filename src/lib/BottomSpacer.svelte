@@ -1,7 +1,7 @@
-<div class="spacer" />
+<div class="bottom-spacer" />
 
 <style lang="scss">
-	.spacer {
+	.bottom-spacer {
 		height: 175px;
 	}
 </style>

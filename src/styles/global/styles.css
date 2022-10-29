@@ -1,0 +1,33 @@
+:root {
+  --colors-blue: #579dc8;
+  --colors-green: #7feea1;
+  --colors-white: rgb(230, 228, 241);
+  --colors-orange: #f7ab50;
+  --colors-black: #17141b;
+  --colors-gray: #24202b;
+  --colors-lightgray: #40394d;
+  --colors-lightergray: #4c455a;
+  --sizes-control-height: 2rem;
+  --primary-padding: 1rem;
+}
+
+html {
+  background: rgb(148, 117, 169);
+}
+
+html,
+body {
+  color: var(--colors-white);
+  font-family: sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+  font-weight: bolder;
+  color: var(--colors-blue);
+}
+a:hover, a:visited {
+  color: var(--colors-blue);
+  text-decoration: none;
+}

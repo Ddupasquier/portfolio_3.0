@@ -17,14 +17,17 @@
 <style lang="scss">
 	header {
 		display: flex;
-		position: fixed;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
 		width: 100%;
-		margin-top: 3rem;
+		height: 60rem;
 		text-align: center;
 		background: none;
 		z-index: 1;
+		div {
+			position: fixed;
+			top: 0;
+		}
 	}
 </style>
