@@ -4,7 +4,7 @@
 
 <svelte:window on:scroll={(e) => (scroll = window.scrollY)} />
 
-<h1 style:transform={`translateY(${scroll / 3}px)`}>Under Construction</h1>
+<h1 style:transform={`translateY(${scroll / 3}px)`}>Under Construction.</h1>
 
 <style lang="scss">
 	h1 {
