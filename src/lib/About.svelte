@@ -76,8 +76,8 @@
 	}
 
 	.about-container-left-img {
-		width: 100%;
-		height: 100%;
+		width: 80%;
+		height: 80%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -108,7 +108,7 @@
 		align-items: center;
 		flex-direction: column;
 		div {
-			background: rgb(0, 0, 0);
+			background: #3a3a3a;
 			border-radius: 0.3rem;
 			padding: 1rem;
 		}
@@ -145,8 +145,10 @@
 				color: rgb(196, 196, 196);
 				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
                         transition: .5s;
+				cursor: default;
 				&:hover {
-					transform: scale(1.2);
+					transform: scale(1.2) rotate(5deg);
+					color: white;
 				}
 			}
 		}
@@ -227,38 +229,38 @@
 		}
 	}
 
-	@media screen and (min-width: 768px) {
-		.about-container-left-img {
-			width: 50%;
-			height: 50%;
-		}
-	}
+	// @media screen and (min-width: 768px) {
+	// 	.about-container-left-img {
+	// 		width: 50%;
+	// 		height: 50%;
+	// 	}
+	// }
 
-	@media screen and (min-width: 1024px) {
-		.about-container-left-img {
-			width: 50%;
-			height: 50%;
-		}
-	}
+	// @media screen and (min-width: 1024px) {
+	// 	.about-container-left-img {
+	// 		width: 50%;
+	// 		height: 50%;
+	// 	}
+	// }
 
-	@media screen and (min-width: 1440px) {
-		.about-container-left-img {
-			width: 50%;
-			height: 50%;
-		}
-	}
+	// @media screen and (min-width: 1440px) {
+	// 	.about-container-left-img {
+	// 		width: 50%;
+	// 		height: 50%;
+	// 	}
+	// }
 
-	@media screen and (min-width: 2560px) {
-		.about-container-left-img {
-			width: 50%;
-			height: 50%;
-		}
-	}
+	// @media screen and (min-width: 2560px) {
+	// 	.about-container-left-img {
+	// 		width: 50%;
+	// 		height: 50%;
+	// 	}
+	// }
 
-	@media screen and (min-width: 3840px) {
-		.about-container-left-img {
-			width: 50%;
-			height: 50%;
-		}
-	}
+	// @media screen and (min-width: 3840px) {
+	// 	.about-container-left-img {
+	// 		width: 50%;
+	// 		height: 50%;
+	// 	}
+	// }
 </style>
