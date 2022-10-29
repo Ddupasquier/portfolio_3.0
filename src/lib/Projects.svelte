@@ -4,6 +4,9 @@
 
 	let scroll: number;
 	// $: visible = scroll > 550;
+	const duration = 3000;
+	const minFadeDelay = 100;
+	const maxFadeDelay = 1000;
 
 	const random = (min: number, max: number) => {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -16,10 +19,6 @@
 
 	let photos: Photos | any = [];
 	const nums = [421, 422, 423, 424, 425, 426, 427, 428];
-
-	const duration = 3000;
-	const minFadeDelay = 100;
-	const maxFadeDelay = 1000;
 
 	onMount(async () => {
 		const promises = nums.map(async (num) => {

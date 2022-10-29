@@ -1,0 +1,17 @@
+export {default as css} from './css.svg';
+export {default as html} from './html.svg';
+export {default as js} from './js.svg';
+export {default as react} from './react.svg';
+export {default as figma} from './figma.svg';
+export {default as github} from './github.svg';
+export {default as git} from './git.svg';
+export {default as npm} from './npm.svg';
+export {default as netlify} from './netlify.svg';
+export {default as postgresql} from './postgresql.svg';
+export {default as rails} from './rails.svg';
+export {default as ruby} from './ruby.svg';
+export {default as sass} from './sass.svg';
+export {default as stackoverflow} from './stackoverflow.svg';
+export {default as svelte} from './svelte.svg';
+export {default as typescript} from './typescript.svg';
+export {default as vscode} from './vscode.svg';

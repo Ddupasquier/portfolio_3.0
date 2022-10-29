@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Logo from './Logo/Logo.svelte';
-	let scroll: number;
+	let scroll: number = 0;
 	$: visible = scroll < 700;
 </script>
 

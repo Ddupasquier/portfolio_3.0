@@ -4,6 +4,7 @@
 	import FrontWaves from '$lib/Waves/FrontWaves.svelte';
 	import BackWaves from '$lib/Waves/BackWaves.svelte';
 	import Footer from '$lib/Footer.svelte';
+	import Rain from '$lib/Rain/Rain.svelte';
 </script>
 
 <GlobalStylesProvider>
@@ -11,6 +12,7 @@
 		<AboveFold />
 		<BackWaves />
 		<FrontWaves />
+		<Rain />
 		<main>
 			<slot />
 		</main>

@@ -1,12 +1,10 @@
 <script lang="ts">
-	let scroll: number | any;
+	let scroll: number = 0;
 	// how do I scale down the logo container when the user scrolls down?
 	// I want to scale down the logo container when the user scrolls down
 	// so that the logo container is smaller when the user scrolls down
 	// and the logo container is bigger when the user scrolls up
 	$: scale = 1 - scroll / 1000;
-	
-	
 </script>
 
 <svelte:window bind:scrollY={scroll} />
@@ -124,7 +122,7 @@
 					$value: $i * 0.1;
 					opacity: 0;
 					animation: appearY 1s ease-in-out forwards;
-					animation-delay: #{$value + .5}s;
+					animation-delay: #{$value + 0.5}s;
 				}
 			}
 		}
@@ -169,7 +167,7 @@
 				li:nth-child(#{$i}) {
 					$value: $i * 0.1;
 					opacity: 0;
-					animation: appearY .9s ease-in-out forwards;
+					animation: appearY 0.9s ease-in-out forwards;
 					animation-delay: #{$value + 1.5}s;
 				}
 			}
