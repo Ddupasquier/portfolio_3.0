@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fade, scale } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
 	let scroll: number;
-	$: visible = scroll > 550;
+	// $: visible = scroll > 550;
 
 	const random = (min: number, max: number) => {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -34,35 +34,33 @@
 <svelte:window bind:scrollY={scroll} />
 
 <div class="proj-header">Projects</div>
-<div class="gallery">
-	{#each photos as photo}
+<div class="gallery" in:scale={{ duration }}>
+	{#each photos as photo (photo)}
 		<div class="gallery-item" id="gallery-item-4">
-			{#if visible}
-				<img
-					src={photo.src}
-					alt="random"
-					class="gallery-image"
-					in:fade={{ delay: photo.fadeDelay, duration }}
+			<img
+				src={photo.src}
+				alt="random"
+				class="gallery-image"
+				in:fade={{ delay: photo.fadeDelay, duration }}
+				out:fade={{ duration }}
+			/>
+			{#if photo.src}
+				<div
+					class="gallery-item-info"
+					in:fade={{ delay: photo.fadeDelay + 400, duration }}
 					out:fade={{ duration }}
-				/>
-				{#if photo.src}
-					<div
-						class="gallery-item-info"
-						in:fade={{ delay: photo.fadeDelay + 400, duration }}
-						out:fade={{ duration }}
-					>
-						<ul>
-							<li class="gallery-item-likes">
-								<span class="visually-hidden">Likes:</span>
-								<i class="fas fa-heart" aria-hidden="true" /> 56
-							</li>
-							<li class="gallery-item-comments">
-								<span class="visually-hidden">Comments:</span>
-								<i class="fas fa-comment" aria-hidden="true" /> 3
-							</li>
-						</ul>
-					</div>
-				{/if}
+				>
+					<ul>
+						<li class="gallery-item-likes">
+							<span class="visually-hidden">Likes:</span>
+							<i class="fas fa-heart" aria-hidden="true" /> 56
+						</li>
+						<li class="gallery-item-comments">
+							<span class="visually-hidden">Comments:</span>
+							<i class="fas fa-comment" aria-hidden="true" /> 3
+						</li>
+					</ul>
+				</div>
 			{/if}
 		</div>
 	{:else}
@@ -86,6 +84,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		border-radius: 0.3rem;
 	}
 
 	.gallery-item-info {

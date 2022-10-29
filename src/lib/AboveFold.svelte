@@ -27,10 +27,4 @@
 		background: none;
 		z-index: 1;
 	}
-
-	@media (max-width: 600px) {
-		header {
-			z-index: 3;
-		}
-	}
 </style>

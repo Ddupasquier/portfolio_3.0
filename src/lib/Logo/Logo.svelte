@@ -1,10 +1,17 @@
 <script lang="ts">
-	let scroll: number;
+	let scroll: number | any;
+	// how do I scale down the logo container when the user scrolls down?
+	// I want to scale down the logo container when the user scrolls down
+	// so that the logo container is smaller when the user scrolls down
+	// and the logo container is bigger when the user scrolls up
+	$: scale = 1 - scroll / 1000;
+	
+	
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
-<div class="logo-container">
+<div class="logo-container" style="transform: scale({scale});">
 	<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
 		<g>
 			<title>Layer 1</title>
@@ -44,9 +51,50 @@
 			>
 		</g>
 	</svg>
-	<div class="dylan">ylan</div>
-	<div class="dupasquier">upasquier</div>
-	<div class="role">Front-End Developer</div>
+	<div class="dylan">
+		<ul>
+			<li>y</li>
+			<li>l</li>
+			<li>a</li>
+			<li>n</li>
+		</ul>
+	</div>
+	<div class="dupasquier">
+		<ul>
+			<li>u</li>
+			<li>p</li>
+			<li>a</li>
+			<li>s</li>
+			<li>q</li>
+			<li>u</li>
+			<li>i</li>
+			<li>e</li>
+			<li>r</li>
+		</ul>
+	</div>
+	<div class="role">
+		<ul>
+			<li>F</li>
+			<li>r</li>
+			<li>o</li>
+			<li>n</li>
+			<li>t</li>
+			<li>-</li>
+			<li>E</li>
+			<li>n</li>
+			<li>d</li>
+			<li />
+			<li>D</li>
+			<li>e</li>
+			<li>v</li>
+			<li>e</li>
+			<li>l</li>
+			<li>o</li>
+			<li>p</li>
+			<li>e</li>
+			<li>r</li>
+		</ul>
+	</div>
 </div>
 
 <style lang="scss">
@@ -68,7 +116,18 @@
 		font-size: 70px;
 		font-family: 'Noto Sans JP';
 		color: colors.$black;
-		animation: appear 1s ease-in-out forwards;
+		ul {
+			display: flex;
+			list-style: none;
+			@for $i from 1 through 9 {
+				li:nth-child(#{$i}) {
+					$value: $i * 0.1;
+					opacity: 0;
+					animation: appearY 1s ease-in-out forwards;
+					animation-delay: #{$value + .5}s;
+				}
+			}
+		}
 	}
 
 	.dupasquier {
@@ -79,7 +138,18 @@
 		font-size: 70px;
 		font-family: 'Noto Sans JP';
 		color: colors.$black;
-		animation: appear 1.4s ease-in-out forwards;
+		ul {
+			display: flex;
+			list-style: none;
+			@for $i from 1 through 9 {
+				li:nth-child(#{$i}) {
+					$value: $i * 0.1;
+					opacity: 0;
+					animation: appearY 1s ease-in-out forwards;
+					animation-delay: #{$value + 1}s;
+				}
+			}
+		}
 	}
 
 	.role {
@@ -92,7 +162,25 @@
 		font-family: 'Noto Sans JP';
 		font-weight: 500;
 		color: colors.$black;
-		animation: appear 1.6s ease-in-out forwards;
+		ul {
+			display: flex;
+			list-style: none;
+			@for $i from 1 through 19 {
+				li:nth-child(#{$i}) {
+					$value: $i * 0.1;
+					opacity: 0;
+					animation: appearY .9s ease-in-out forwards;
+					animation-delay: #{$value + 1.5}s;
+				}
+			}
+			// 1. loop through 19 times
+			// 2. for each loop, set the opacity to 0
+			// 3. set the animation to appearY
+			// 4. set the animation to 1s
+			// 5. set the animation to ease-in-out
+			// 6. set the animation to forwards
+			// 7. set the animation delay to 0.1s * the current loop number + 1.7s
+		}
 	}
 
 	.role::after {
@@ -104,10 +192,21 @@
 		height: 2px;
 		background-color: colors.$white;
 		z-index: -1;
-		animation: appear 1.6s ease-in-out forwards;
+		animation: appearX 1.6s ease-in-out forwards;
 	}
 
-	@keyframes appear {
+	@keyframes appearY {
+		0% {
+			opacity: 0;
+			transform: translateY(-100%);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes appearX {
 		0% {
 			opacity: 0;
 			transform: translateX(-100%);

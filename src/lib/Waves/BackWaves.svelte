@@ -71,6 +71,7 @@
 		.top-wave {
 			svg {
 				min-height: 1000px;
+				max-height: 2000px;
 			}
 		}
 		.bottom-wave {
@@ -78,6 +79,7 @@
 			top: -10rem;
 			svg {
 				min-height: 1000px;
+				max-height: 2000px;
 			}
 		}
 	}

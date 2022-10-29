@@ -49,7 +49,7 @@
 </div>
 
 <style lang="scss">
-.front-waves {
+	.front-waves {
 		position: absolute;
 		top: -18%;
 		width: 100%;
@@ -58,6 +58,7 @@
 		.top-wave {
 			svg {
 				min-height: 1000px;
+				max-height: 2200px;
 			}
 		}
 		.bottom-wave {
@@ -65,6 +66,7 @@
 			top: -2rem;
 			svg {
 				min-height: 1000px;
+				max-height: 2200px;
 			}
 		}
 	}
