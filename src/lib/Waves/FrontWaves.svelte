@@ -51,7 +51,7 @@
 <style lang="scss">
 	.front-waves {
 		position: absolute;
-		top: -18%;
+		top: -30rem;
 		width: 100%;
 		overflow: hidden;
 		z-index: 1;

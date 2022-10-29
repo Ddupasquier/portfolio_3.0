@@ -7,6 +7,7 @@
 	const duration = 3000;
 	const minFadeDelay = 100;
 	const maxFadeDelay = 1000;
+	let loaded = false
 
 	const random = (min: number, max: number) => {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -27,6 +28,7 @@
 			return { src, fadeDelay };
 		});
 		photos = await Promise.all(promises);
+		loaded = true;
 	});
 </script>
 
@@ -43,7 +45,7 @@
 				in:fade={{ delay: photo.fadeDelay, duration }}
 				out:fade={{ duration }}
 			/>
-			{#if photo.src}
+			<!-- {#if loaded}
 				<div
 					class="gallery-item-info"
 					in:fade={{ delay: photo.fadeDelay + 400, duration }}
@@ -60,7 +62,7 @@
 						</li>
 					</ul>
 				</div>
-			{/if}
+			{/if} -->
 		</div>
 	{:else}
 		Loading...

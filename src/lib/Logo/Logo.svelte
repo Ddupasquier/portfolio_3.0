@@ -1,9 +1,5 @@
 <script lang="ts">
 	let scroll: number = 0;
-	// how do I scale down the logo container when the user scrolls down?
-	// I want to scale down the logo container when the user scrolls down
-	// so that the logo container is smaller when the user scrolls down
-	// and the logo container is bigger when the user scrolls up
 	$: scale = 1 - scroll / 1000;
 </script>
 
@@ -12,7 +8,7 @@
 <div class="logo-container" style="transform: scale({scale});">
 	<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
 		<g>
-			<title>Layer 1</title>
+			<title>Dylan Dupasquier</title>
 			<ellipse
 				stroke-width="15"
 				ry="127"
@@ -51,6 +47,7 @@
 	</svg>
 	<div class="dylan">
 		<ul>
+			<li class="placeholder" />
 			<li>y</li>
 			<li>l</li>
 			<li>a</li>
@@ -59,6 +56,7 @@
 	</div>
 	<div class="dupasquier">
 		<ul>
+			<li class="placeholder" />
 			<li>u</li>
 			<li>p</li>
 			<li>a</li>
@@ -98,6 +96,11 @@
 <style lang="scss">
 	@use 'src/styles/imports/colors.scss' as colors;
 
+	@mixin center-transform {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
 	.logo-container {
 		width: fit-content;
 		height: fit-content;
@@ -117,7 +120,7 @@
 		ul {
 			display: flex;
 			list-style: none;
-			@for $i from 1 through 9 {
+			@for $i from 1 through 5 {
 				li:nth-child(#{$i}) {
 					$value: $i * 0.1;
 					opacity: 0;
@@ -139,7 +142,7 @@
 		ul {
 			display: flex;
 			list-style: none;
-			@for $i from 1 through 9 {
+			@for $i from 1 through 10 {
 				li:nth-child(#{$i}) {
 					$value: $i * 0.1;
 					opacity: 0;
@@ -191,6 +194,36 @@
 		background-color: colors.$white;
 		z-index: -1;
 		animation: appearX 1.6s ease-in-out forwards;
+	}
+
+	@media screen and (max-width: 768px) {
+		@mixin mobile-logo {
+			ul {
+				li.placeholder {
+					&::before {
+						content: 'D';
+					}
+				}
+			}
+		}
+
+		.dylan {
+			top: 17.8rem;
+			color: white;
+			@include center-transform;
+			@include mobile-logo;
+		}
+		.dupasquier {
+			top: 21rem;
+			color: white;
+			@include center-transform;
+			@include mobile-logo;
+		}
+		.role {
+			top: 26rem;
+			color: white;
+			@include center-transform;
+		}
 	}
 
 	@keyframes appearY {

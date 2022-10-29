@@ -30,4 +30,10 @@
 			top: 0;
 		}
 	}
+
+	@media screen and (max-width: 768px) {
+		header {
+			z-index: 3;
+		}
+	}
 </style>
