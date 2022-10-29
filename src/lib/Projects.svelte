@@ -75,6 +75,7 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 1rem;
+		min-height: 800px;
 	}
 
 	.gallery-item {
