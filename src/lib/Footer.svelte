@@ -14,16 +14,19 @@
 
 {#if visible}
 	<footer in:fade={{ delay: 0 }} out:fade={{ duration: 200 }}>
-		{#each socialMedias as { name, link, icon }}
-			<a href={link} target="_blank" rel="noopener noreferrer">
-				<!-- <img src={icon} alt={name} /> -->
-			</a>
-		{/each}
+		<div class="icons">
+			{#each socialMedias as { name, link, icon }}
+				<a href={link} target="_blank" rel="noopener noreferrer">
+					<img src={icon} alt={name} width="30px" />
+				</a>
+			{/each}
+		</div>
 		Dylan Dupasquier - {year}
 	</footer>
 {/if}
 
 <style lang="scss">
+	@use 'src/styles/imports/colors' as colors;
 	footer {
 		position: fixed;
 		bottom: 0;
@@ -33,8 +36,26 @@
 		color: #fff;
 		display: flex;
 		align-items: center;
+		flex-direction: column;
+		gap: 0.5rem;
 		justify-content: center;
 		text-align: center;
 		z-index: 4;
+		img {
+			filter: invert(1);
+		}
+	}
+
+	.icons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		a {
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
 	}
 </style>

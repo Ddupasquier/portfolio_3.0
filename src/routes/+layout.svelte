@@ -23,7 +23,7 @@
 			<FrontWaves />
 		{/if}
 		<Banner />
-		<main class="hideScroll">
+		<main class="hidescroll">
 			<slot />
 		</main>
 		<Footer />
