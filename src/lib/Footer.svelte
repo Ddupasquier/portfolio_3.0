@@ -14,14 +14,12 @@
 
 {#if visible}
 	<footer in:fade={{ delay: 0 }} out:fade={{ duration: 200 }}>
-		Dylan Dupasquier<br />
 		{#each socialMedias as { name, link, icon }}
 			<a href={link} target="_blank" rel="noopener noreferrer">
 				<!-- <img src={icon} alt={name} /> -->
 			</a>
 		{/each}
-
-		{year}
+		Dylan Dupasquier - {year}
 	</footer>
 {/if}
 

@@ -5,14 +5,25 @@
 	import { fly } from 'svelte/transition';
 	import { scale } from 'svelte/transition';
 	import { crossfade } from 'svelte/transition';
-	const skills = ["Javascript", "Typescript", "Svelte", "React", "HTML", "SCSS/Sass", "Ruby on Rails", "Git", "Github" ,"Figma"]
+	const skills = [
+		'Javascript',
+		'Typescript',
+		'Svelte',
+		'React',
+		'HTML',
+		'SCSS/Sass',
+		'Ruby on Rails',
+		'Git',
+		'Github',
+		'Figma'
+	];
 </script>
 
 <div class="about">
 	<div class="about-container">
 		<div class="about-container-left">
 			<div class="about-container-left-img">
-				<img src="https://picsum.photos/421" alt="about me" />
+				<img src="https://i.ibb.co/Vwk6P89/1639413868041.webp" alt="about me" />
 			</div>
 		</div>
 		<div class="about-container-right">

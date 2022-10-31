@@ -17,7 +17,7 @@
 		svelte,
 		typescript,
 		vscode
-	} from '$lib/assets';
+	} from '$lib/assets/techIcons';
 	let scroll: number = 0;
 
       const icons = [

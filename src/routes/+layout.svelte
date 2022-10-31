@@ -23,10 +23,10 @@
 			<FrontWaves />
 		{/if}
 		<Banner />
-		<main>
+		<main class="hideScroll">
 			<slot />
 		</main>
-		<!-- <Footer /> -->
+		<Footer />
 	</div>
 </GlobalStylesProvider>
 
