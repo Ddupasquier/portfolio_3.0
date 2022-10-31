@@ -87,6 +87,11 @@
 		height: 100%;
 		object-fit: cover;
 		border-radius: 0.3rem;
+		filter: grayscale(100%);
+		transition: filter 0.6s;
+		&:hover {
+			filter: grayscale(0);
+		}
 	}
 
 	.gallery-item-info {
