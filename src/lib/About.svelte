@@ -1,4 +1,3 @@
-<!-- create styled about me component -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
@@ -6,6 +5,7 @@
 	import { fly } from 'svelte/transition';
 	import { scale } from 'svelte/transition';
 	import { crossfade } from 'svelte/transition';
+	const skills = ["Javascript", "Typescript", "Svelte", "React", "HTML", "SCSS/Sass", "Ruby on Rails", "Git", "Github" ,"Figma"]
 </script>
 
 <div class="about">
@@ -18,27 +18,21 @@
 		<div class="about-container-right">
 			<div class="about-container-right-text">
 				<div>
-					<h1>About Me</h1>
+					<h1>TLDR; About Me</h1>
 					<p>
 						Hello, I'm <span class="name">Dylan</span> and I'm a
 						<span class="name">Frontend Developer</span>
-						from Portland, Oregon. Besides my time in bootcamp, I'm a <span class="name">self-taught</span> developer and I love to create
-						things that live on the web. I specialize in creating
-						<span class="name">animations</span> and web apps.
+						from Portland, Oregon. Besides my time in bootcamp, I'm a
+						<span class="name">self-taught</span>
+						developer and I love to create things that live on the web. I specialize in creating
+						<span class="name">animations</span> and <span class="name">web apps</span>.
 					</p>
 				</div>
 				<p>Here are a few technologies I've been working with recently:</p>
 				<ul>
-					<li>HTML5</li>
-					<li>CSS3</li>
-					<li>JavaScript</li>
-					<li>React</li>
-					<li>Redux</li>
-					<li>Node.js</li>
-					<li>Express</li>
-					<li>MongoDB</li>
-					<li>Git</li>
-					<li>GitHub</li>
+					{#each skills as skill}
+						<li>{skill}</li>
+					{/each}
 				</ul>
 			</div>
 		</div>
@@ -144,11 +138,19 @@
 				background: #3a3a3a;
 				color: rgb(196, 196, 196);
 				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-                        transition: .5s;
+				transition: 0.5s;
 				cursor: default;
-				&:hover {
-					transform: scale(1.2) rotate(5deg);
-					color: white;
+				&:nth-child(odd) {
+					&:hover {
+						transform: scale(1.2) rotate(5deg);
+						color: white;
+					}
+				}
+				&:nth-child(even) {
+					&:hover {
+						transform: scale(1.2) rotate(-5deg);
+						color: white;
+					}
 				}
 			}
 		}
@@ -156,7 +158,7 @@
 
 	.name {
 		color: #00ff22;
-            font-size: larger;
+		font-size: larger;
 	}
 
 	@media screen and (min-width: 768px) {

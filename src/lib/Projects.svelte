@@ -4,10 +4,11 @@
 
 	let scroll: number;
 	// $: visible = scroll > 550;
+	const nums = [421, 422, 423, 424, 425, 426, 427, 428];
 	const duration = 3000;
 	const minFadeDelay = 100;
 	const maxFadeDelay = 1000;
-	let loaded = false
+	let loaded = false;
 
 	const random = (min: number, max: number) => {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -18,8 +19,7 @@
 		fadeDelay: number;
 	}
 
-	let photos: Photos | any = [];
-	const nums = [421, 422, 423, 424, 425, 426, 427, 428];
+	let photos: Photos[] = [];
 
 	onMount(async () => {
 		const promises = nums.map(async (num) => {
@@ -36,19 +36,19 @@
 
 <div class="proj-header">Projects</div>
 <div class="gallery" in:scale={{ duration }}>
-	{#each photos as photo (photo)}
+	{#each photos as { src, fadeDelay }}
 		<div class="gallery-item" id="gallery-item-4">
 			<img
-				src={photo.src}
+				{src}
 				alt="random"
 				class="gallery-image"
-				in:fade={{ delay: photo.fadeDelay, duration }}
+				in:fade={{ delay: fadeDelay, duration }}
 				out:fade={{ duration }}
 			/>
 			{#if loaded}
 				<div
 					class="gallery-item-info"
-					in:fade={{ delay: photo.fadeDelay + 400, duration }}
+					in:fade={{ delay: fadeDelay + 400, duration }}
 					out:fade={{ duration }}
 				>
 					Placeholder
@@ -99,11 +99,11 @@
 		border-radius: 0 0 0.3rem 0;
 	}
 
-	.gallery-item-likes,
-	.gallery-item-comments {
-		display: inline-block;
-		margin-right: 1rem;
-	}
+	// .gallery-item-likes,
+	// .gallery-item-comments {
+	// 	display: inline-block;
+	// 	margin-right: 1rem;
+	// }
 
 	@media (max-width: 768px) {
 		.gallery {
