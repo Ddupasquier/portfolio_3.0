@@ -1,8 +1,5 @@
 <script lang="ts">
 	let scroll: number = 0;
-
-	$: layer1 = 325 + scroll * 0.5;
-	console.log('layer1', String(layer1));
 </script>
 
 <svelte:window on:scroll={(e) => (scroll = window.scrollY)} />
@@ -12,6 +9,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	version="1.1"
+	style:transform={`translateY(${scroll / 10}px)`}
 >
 	<path d="M0 325 900 10 900 215 0 350Z" fill="#4d0073" class="layer1" />
 	<path d="M0 350 900 100 900 255 0 370Z" fill="#4d2273" class="layer2" />

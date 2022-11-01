@@ -1,10 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { slide } from 'svelte/transition';
-	import { fade } from 'svelte/transition';
-	import { fly } from 'svelte/transition';
-	import { scale } from 'svelte/transition';
-	import { crossfade } from 'svelte/transition';
 	const skills = [
 		'Javascript',
 		'Typescript',

@@ -18,16 +18,15 @@
 		typescript,
 		vscode
 	} from '$lib/assets/techIcons';
-	let scroll: number = 0;
-
+	
       const icons = [
-        html,
-        css,
-        js,
-        react,
-        ruby,
-        rails,
-        postgresql,
+		html,
+		css,
+		js,
+		react,
+		ruby,
+		rails,
+		postgresql,
         svelte,
         typescript,
         sass,
@@ -39,13 +38,18 @@
         vscode,
         stackoverflow
       ];
+
+	let scroll: number = 0;
+	let screenWidth: number = 0;
+
+	$: iconNumber = Math.floor(screenWidth / 30);
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<svelte:window bind:scrollY={scroll} bind:innerWidth={screenWidth}  />
 
 <div class="snow-container" style:transform={`translateY(${scroll / 3}px)`}>
 	<ul>
-		{#each Array(50) as _, i}
+		{#each Array(iconNumber) as _, i}
                   <li class="snowflake">
                         <img src={icons[Math.floor(Math.random() * icons.length)]} alt="icon" width="40px" height="40px" />
                   </li>

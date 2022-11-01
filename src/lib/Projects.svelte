@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { fade, scale } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import { projects } from '$lib/data/projects';
 
 	let scroll: number;
-	// $: visible = scroll > 550;
-	const nums = [421, 422, 423, 424, 425, 426, 427, 428];
+	$: visible = scroll > 1000 && scroll < 3200;
 	const duration = 3000;
 	const minFadeDelay = 100;
 	const maxFadeDelay = 1000;
@@ -14,61 +14,45 @@
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	};
 
-	interface Photos {
-		src: string;
-		fadeDelay: number;
-	}
-
-	let photos: Photos[] = [];
-
-	onMount(async () => {
-		const promises = nums.map(async (num) => {
-			const src = `https://picsum.photos/${num}`;
-			const fadeDelay = random(minFadeDelay, maxFadeDelay);
-			return { src, fadeDelay };
-		});
-		photos = await Promise.all(promises);
+	onMount(() => {
 		loaded = true;
 	});
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
-<div class="proj-header">Projects</div>
-<div class="gallery" in:scale={{ duration }}>
-	{#each photos as { src, fadeDelay }}
-		<div class="gallery-item" id="gallery-item-4">
-			<img
-				{src}
-				alt="random"
-				class="gallery-image"
-				in:fade={{ delay: fadeDelay, duration }}
-				out:fade={{ duration }}
-			/>
-			{#if loaded}
-				<div
-					class="gallery-item-info"
-					in:fade={{ delay: fadeDelay + 400, duration }}
+{#if visible}
+	<div class="gallery">
+		{#each projects as project}
+			<div class="gallery-item">
+				<img
+					src={project.image}
+					alt={project.title}
+					class="gallery-image"
+					in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
 					out:fade={{ duration }}
-				>
-					Placeholder
-					<!-- <ul>
-						<li class="gallery-item-likes">
-							<span class="visually-hidden">Likes:</span>
-							<i class="fas fa-heart" aria-hidden="true" /> 56
-						</li>
-						<li class="gallery-item-comments">
-							<span class="visually-hidden">Comments:</span>
-							<i class="fas fa-comment" aria-hidden="true" /> 3
-						</li>
-					</ul> -->
-				</div>
-			{/if}
-		</div>
-	{:else}
-		Loading...
-	{/each}
-</div>
+				/>
+				{#if loaded}
+					<div class="gallery-item-info" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
+						<div class="title">
+							{project.title}
+						</div>
+						<div class="when">
+							{project.when}
+						</div>
+					</div>
+					<ul class="tech">
+						{#each project.tech as tech}
+							<li class="tech-item" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
+								{tech}
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
+		{/each}
+	</div>
+{/if}
 
 <style lang="scss">
 	.gallery {
@@ -80,6 +64,11 @@
 
 	.gallery-item {
 		position: relative;
+		cursor: pointer;
+	}
+
+	.gallery-item:hover .tech {
+		opacity: 1;
 	}
 
 	.gallery-image {
@@ -95,20 +84,54 @@
 	}
 
 	.gallery-item-info {
+		display: flex;
+		flex-direction: column;
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		top: 0;
 		background-color: rgba(0, 0, 0, 0.5);
 		color: #fff;
+		font-size: 1.2rem;
 		padding: 0.5rem;
 		border-radius: 0 0 0.3rem 0;
 	}
 
-	// .gallery-item-likes,
-	// .gallery-item-comments {
-	// 	display: inline-block;
-	// 	margin-right: 1rem;
-	// }
+	.tech {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		opacity: 0;
+		background: rgba(0, 0, 0, 0.5);
+		transition: all 0.6s;
+		.tech-item {
+			font-size: 0.8rem;
+			font-weight: 400;
+			text-align: center;
+			margin: 0.2rem;
+			padding: 0.5rem 1rem;
+			border-radius: 5px;
+			background: #3a3a3a;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			transition: 0.5s;
+			cursor: default;
+			transition: all 0.6s;
+			&:nth-child(odd) {
+				&:hover {
+					transform: scale(1.2) rotate(5deg);
+				}
+			}
+			&:nth-child(even) {
+				&:hover {
+					transform: scale(1.2) rotate(-5deg);
+				}
+			}
+		}
+	}
 
 	@media (max-width: 768px) {
 		.gallery {
@@ -120,11 +143,5 @@
 		.gallery {
 			grid-template-columns: 1fr;
 		}
-	}
-
-	.proj-header {
-		font-size: 2rem;
-		font-weight: 600;
-		margin-bottom: 1rem;
 	}
 </style>
