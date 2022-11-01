@@ -12,6 +12,23 @@
 	<About />
 	<Projects />
 	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
+	<BottomSpacer />
 </div>
 
 <style lang="scss">

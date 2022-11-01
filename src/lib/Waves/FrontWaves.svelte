@@ -1,5 +1,6 @@
 <script lang="ts">
 	let scroll: number;
+
 </script>
 
 <svelte:window bind:scrollY={scroll} />

@@ -3,9 +3,9 @@
 	import GlobalStylesProvider from '$lib/GlobalStylesProvider.svelte';
 	import FrontWaves from '$lib/Waves/FrontWaves.svelte';
 	import BackWaves from '$lib/Waves/BackWaves.svelte';
+	import Rays from '$lib/Rays/Rays.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import Snow from '$lib/Snow/Snow.svelte';
-	import Banner from '$lib/Banner.svelte';
 
 	let hideScroll = true;
 	let scroll: number = 0;
@@ -22,10 +22,10 @@
 			<BackWaves />
 			<FrontWaves />
 		{/if}
-		<Banner />
 		<main class="hidescroll">
 			<slot />
 		</main>
+		<Rays />
 		<Footer />
 	</div>
 </GlobalStylesProvider>
