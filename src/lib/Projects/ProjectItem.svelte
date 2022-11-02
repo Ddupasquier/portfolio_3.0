@@ -6,9 +6,9 @@
 
 	export let project: Project;
 
-	const duration = 3000;
+	const duration = 1000;
 	const minFadeDelay = 100;
-	const maxFadeDelay = 1000;
+	const maxFadeDelay = 300;
 	let loaded = false;
 
 	const random = (min: number, max: number) => {
@@ -22,12 +22,10 @@
 	$: more = '';
 	const descShown = () => {
 		more = 'shown';
-		console.log(more);
 	};
 
 	const descHidden = () => {
 		more = '';
-		console.log(more);
 	};
 </script>
 
