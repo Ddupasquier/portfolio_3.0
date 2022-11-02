@@ -36,7 +36,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		width: 80%;
+		// width: 80%;
+		max-width: 1000px;
 		margin: auto;
 	}
 
