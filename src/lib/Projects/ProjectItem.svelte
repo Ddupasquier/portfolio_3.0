@@ -51,7 +51,16 @@
 		<div class="less-btn">
 			<WideButton onClick={descHidden}>Close</WideButton>
 		</div>
-		{project.description}
+		<section>
+			<div class="links">
+				<a href={project.links.github} target="_blank" rel="noopener noreferrer"> Github </a> |
+				<a href={project.links.live} target="_blank" rel="noopener noreferrer">Live</a>
+			</div>
+
+			<div class="description-text">
+				{project.description}
+			</div>
+		</section>
 		<ul class="tech">
 			{#each project.tech as tech}
 				<li class="tech-item" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
@@ -67,7 +76,18 @@
 
 	.gallery-item {
 		position: relative;
-		max-height: 30rem;
+	}
+
+	@media screen and (max-width: 1700px) {
+		.gallery-item {
+			min-height: 20rem;
+		}
+	}
+
+	@media screen and (max-width: 1450px) {
+		.description-text {
+			font-size: 1rem;
+		}
 	}
 
 	.gallery-image {
@@ -104,8 +124,8 @@
 		position: absolute;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		// justify-content: center;
+		// align-items: center;
 		text-align: center;
 		top: 0;
 		bottom: 0;
@@ -120,6 +140,9 @@
 		transform-origin: right;
 		transform: scaleX(0);
 		cursor: default;
+		section {
+			margin-top: 3rem;
+		}
 	}
 
 	.shown {
@@ -152,7 +175,6 @@
 	.tech {
 		position: absolute;
 		bottom: 0;
-		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -168,6 +190,26 @@
 			border-radius: 5px;
 			cursor: default;
 			transition: all 0.6s;
+		}
+	}
+
+	.links {
+		margin-bottom: 1rem;
+		a {
+			color: colors.$purple;
+			font-size: 1.2rem;
+			font-weight: 800;
+			padding: 0.5rem;
+			background-color: rgba(0, 0, 0);
+			border-radius: 0.3rem;
+			border: none;
+			cursor: pointer;
+			text-transform: uppercase;
+			text-decoration: none;
+			transition: background-color 0.6s;
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.5);
+			}
 		}
 	}
 </style>

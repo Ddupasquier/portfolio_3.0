@@ -21,7 +21,7 @@ export const projects: Project[] = [
 		kind: 'proj',
 		title: 'AntiSocialSuite',
 		description:
-			'Developed a social media management tool to increase the engagement rate across multiple social media accounts. Built an automation platform utilizing Selenium to automate common interactions to reduce time spent across each platform up to 80%.',
+			'A social media management tool for increasing engagement across social media accounts using a tool to automate common interactions to reduce time spent across platforms up to 80%.',
                   when: 'Aug 2022 - Present',
 		links: {
 			github: 'https://github.com/Ddupasquier/instaassistant-client',
@@ -49,7 +49,7 @@ export const projects: Project[] = [
 		kind: 'proj',
 		title: 'SimpleStyles',
 		description:
-			'Developed a utility library to ease developer workflow when building React apps, allowing for the easy search and use of common React components, saving significant development time.',
+			'Utility library to ease developer workflow when building React apps, allowing for the easy search and use of common React components, saving significant development time.',
                   when: 'April 2022',
 		links: {
 			github: 'https://github.com/Ddupasquier/phase-5-cssreact-library',

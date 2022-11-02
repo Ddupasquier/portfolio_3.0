@@ -32,7 +32,7 @@
 		// min-height: 800px;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 968px) {
 		.gallery {
 			grid-template-columns: repeat(2, 1fr);
 		}
