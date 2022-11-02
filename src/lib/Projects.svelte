@@ -2,7 +2,6 @@
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import { projects } from '$lib/data/projects';
-	// import {pics} from '$lib/data/pics';
 
 	let scroll: number;
 	$: visible = scroll > 1000 && scroll < 5000;
@@ -15,21 +14,14 @@
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	};
 
-	// const items = [];
-	// for (let i = 0; i < projects.length; i++) {
-	// 	if (projects[i] !== undefined) items.push(projects[i]);
-	// 	if (pics[i] !== undefined) items.push(pics[i]);
-	// }
-
 	onMount(() => {
 		loaded = true;
-		// console.log(items)
 	});
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
-{#if visible}
+{#if visible && loaded}
 	<div class="gallery">
 		{#each projects.sort(() => Math.random() - 0.5) as project}
 			<div class="gallery-item">
@@ -40,7 +32,7 @@
 					in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
 					out:fade={{ duration }}
 				/>
-				{#if loaded}
+				
 					<div class="gallery-item-info" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
 						<div class="title">
 							{project.title}
@@ -56,47 +48,9 @@
 							</li>
 						{/each}
 					</ul>
-				{/if}
+				
 			</div>
 		{/each}
-		<!-- {#each items as item}
-			{#if item && item.kind === 'image'}
-				<div class="gallery-item">
-					<img
-						src={item.src}
-						alt={item.title}
-						class="gallery-image"
-						in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
-						out:fade={{ duration }}
-					/>
-				</div>
-			{:else}
-				<div class="gallery-item">
-					<img
-						src={item.src}
-						alt={item.title}
-						class="gallery-image"
-						in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
-						out:fade={{ duration }}
-					/>
-						<div class="gallery-item-info" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
-							<div class="title">
-								{item.title}
-							</div>
-							<div class="when">
-								{item.when}
-							</div>
-						</div>
-						<ul class="tech">
-							{#each item.tech as tech}
-								<li class="tech-item" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
-									{tech}
-								</li>
-							{/each}
-						</ul>
-				</div>
-			{/if}
-		{/each} -->
 	</div>
 {/if}
 
@@ -116,7 +70,7 @@
 
 	@media (min-width: 768px) {
 		.gallery-item:hover .tech {
-			opacity: 1;
+			transform: scaleY(1);
 		}
 	}
 
@@ -154,8 +108,9 @@
 		flex-wrap: wrap;
 		list-style: none;
 		padding: 0;
-		opacity: 0;
 		background: rgba(0, 0, 0, 0.5);
+		transform-origin: bottom;
+		transform: scaleY(0);
 		transition: all 0.6s;
 		.tech-item {
 			font-size: 0.8rem;
