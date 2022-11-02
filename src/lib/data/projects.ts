@@ -4,6 +4,7 @@ import ss from '$lib/assets/ss.webp';
 import np from '$lib/assets/np.webp';
 
 interface Project {
+	kind: string;
 	title: string;
 	description: string;
       when: string;
@@ -12,11 +13,12 @@ interface Project {
 		live: string | null;
 	};
 	tech: string[];
-	image: string | null;
+	src: string | null;
 }
 
 export const projects: Project[] = [
 	{
+		kind: 'proj',
 		title: 'AntiSocialSuite',
 		description:
 			'Developed a social media management tool to increase the engagement rate across multiple social media accounts. Built an automation platform utilizing Selenium to automate common interactions to reduce time spent across each platform up to 80%.',
@@ -41,9 +43,10 @@ export const projects: Project[] = [
 			'Git',
 			'Github'
 		],
-		image: ass
+		src: ass
 	},
 	{
+		kind: 'proj',
 		title: 'SimpleStyles',
 		description:
 			'Developed a utility library to ease developer workflow when building React apps, allowing for the easy search and use of common React components, saving significant development time.',
@@ -66,9 +69,10 @@ export const projects: Project[] = [
 			'Postman',
 			'BCrypt'
 		],
-		image: ss
+		src: ss
 	},
 	{
+		kind: 'proj',
 		title: 'PokeDex',
 		description: 'A React app to display a list of Pokemon.',
             when: 'December 2021',
@@ -77,9 +81,10 @@ export const projects: Project[] = [
 			live: 'https://pokedex-fi.herokuapp.com/'
 		},
 		tech: ['JavaScript', 'HTML', 'SCSS', 'Git', 'Github', 'Heroku'],
-		image: pokemon
+		src: pokemon
 	},
 	{
+		kind: 'proj',
 		title: 'National Parks',
 		description: 'A React app to display a list of National Parks.',
             when: 'March 2022',
@@ -100,7 +105,7 @@ export const projects: Project[] = [
 			'Postman',
 			'BCrypt'
 		],
-		image: np
+		src: np
 	},
 	// {
 	// 	title: 'MarketProphit',
@@ -111,6 +116,6 @@ export const projects: Project[] = [
 	// 		live: ''
 	// 	},
 	// 	tech: ['Svelte', 'SvelteKit', 'SCSS', 'Cheerio', 'D3', 'Chart.js', 'Javascript', 'HTML5'],
-	// 	image: ass
+	// 	src: ass
 	// }
 ];
