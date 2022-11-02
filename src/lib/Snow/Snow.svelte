@@ -18,8 +18,8 @@
 		typescript,
 		vscode
 	} from '$lib/assets/techIcons';
-	
-      const icons = [
+
+	const icons = [
 		html,
 		css,
 		js,
@@ -27,17 +27,17 @@
 		ruby,
 		rails,
 		postgresql,
-        svelte,
-        typescript,
-        sass,
-        git,
-        github,
-        netlify,
-        npm,
-        figma,
-        vscode,
-        stackoverflow
-      ];
+		svelte,
+		typescript,
+		sass,
+		git,
+		github,
+		netlify,
+		npm,
+		figma,
+		vscode,
+		stackoverflow
+	];
 
 	let scroll: number = 0;
 	let screenWidth: number = 0;
@@ -45,15 +45,20 @@
 	$: iconNumber = Math.floor(screenWidth / 30);
 </script>
 
-<svelte:window bind:scrollY={scroll} bind:innerWidth={screenWidth}  />
+<svelte:window bind:scrollY={scroll} bind:innerWidth={screenWidth} />
 
 <div class="snow-container" style:transform={`translateY(${scroll / 3}px)`}>
 	<ul>
 		{#each Array(iconNumber) as _, i}
-                  <li class="snowflake">
-                        <img src={icons[Math.floor(Math.random() * icons.length)]} alt="icon" width="40px" height="40px" />
-                  </li>
-            {/each}
+			<li class="snowflake">
+				<img
+					src={icons[Math.floor(Math.random() * icons.length)]}
+					alt="icon"
+					width="40px"
+					height="40px"
+				/>
+			</li>
+		{/each}
 	</ul>
 </div>
 
@@ -70,14 +75,20 @@
 			margin: 0;
 			padding: 0;
 			.snowflake {
-				--size: .6rem;
+				--size: 0.6rem;
 				position: absolute;
 				top: -5vh;
 				width: var(--size);
 				height: var(--size);
 				cursor: default;
-                        filter: invert(1);
+				filter: invert(1);
 			}
+		}
+	}
+
+	@media (min-width: 2600px) {
+		.snow-container {
+			top: 70rem;
 		}
 	}
 
