@@ -22,11 +22,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+            align-self: center;
 		flex-direction: column;
 		height: 100%;
 		width: fit-content;
 		text-align: center;
 		padding: 2rem;
+            margin: auto;
 		background: black;
 		border-radius: 0.5rem;
 	}

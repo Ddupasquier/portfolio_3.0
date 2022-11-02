@@ -78,7 +78,7 @@ export const projects: Project[] = [
             when: 'December 2021',
 		links: {
 			github: 'https://github.com/Ddupasquier/Pokedex-1.0',
-			live: 'https://pokedex-fi.herokuapp.com/'
+			live: 'https://6362f7ed703cd919c5788baf--effortless-heliotrope-bba751.netlify.app/'
 		},
 		tech: ['JavaScript', 'HTML', 'SCSS', 'Git', 'Github', 'Heroku'],
 		src: pokemon

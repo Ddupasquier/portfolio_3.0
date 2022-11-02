@@ -19,7 +19,9 @@
 		justify-content: center;
 		flex-direction: column;
 		height: 100%;
-		width: fit-content;
+		width: 100%;
+		margin-bottom: 1rem;
+		text-align: center;
 	}
 	// h2 {
 	// 	font-size: 4rem;
