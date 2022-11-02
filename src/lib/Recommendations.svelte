@@ -41,6 +41,9 @@
 		margin: auto;
 	}
 
+	// on mobile recommendations max width 90%
+	
+
 	.recommendation {
 		display: flex;
 		flex-direction: column;
@@ -75,5 +78,15 @@
 		font-style: italic;
 		line-height: 0;
 		text-align: justify;
+	}
+
+	@media (max-width: 480px) {
+		.recommendations {
+			max-width: 90%;
+		}
+		.description {
+			font-size: 1.2rem;
+			padding: 1.1rem;
+		}
 	}
 </style>

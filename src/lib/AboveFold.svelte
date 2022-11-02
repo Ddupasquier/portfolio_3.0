@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Logo from './Logo/Logo.svelte';
 	let scroll: number = 0;
-	$: visible = scroll < 700;
+	$: visible = scroll < 670;
 </script>
 
 <svelte:window bind:scrollY={scroll} />
@@ -30,10 +30,4 @@
 			top: 0;
 		}
 	}
-
-	// @media screen and (max-width: 768px) {
-	// 	header {
-	// 		z-index: 3;
-	// 	}
-	// }
 </style>

@@ -1,11 +1,11 @@
 <script lang="ts">
 	let scroll: number = 0;
-	$: scale = 1 - scroll / 1000;
+	// $: scale = 1 - scroll / 1000;
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<!-- <svelte:window bind:scrollY={scroll} /> -->
 
-<div class="logo-container" style="transform: scale({scale});">
+<div class="logo-container">
 	<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
 		<g>
 			<title>Dylan Dupasquier</title>

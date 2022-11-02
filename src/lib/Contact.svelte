@@ -29,7 +29,7 @@
 		width: 80%;
 		max-width: 500px;
 		text-align: center;
-		padding: 2rem;
+		padding: 1rem;
             margin: auto;
 		background: rgb(0, 0, 0, .75);
 		border-radius: 0.5rem;
@@ -46,6 +46,13 @@
 		font-family: font.$noto-sans;
 		color: #22ff7e;
 		margin: 1rem;
+	}
+
+	// on mobile li font size is smaller
+	@media (max-width: 500px) {
+		li {
+			font-size: 1rem;
+		}
 	}
 
 	a {
