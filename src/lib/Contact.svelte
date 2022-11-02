@@ -30,7 +30,7 @@
 		text-align: center;
 		padding: 2rem;
             margin: auto;
-		background: black;
+		background: rgb(0, 0, 0, .75);
 		border-radius: 0.5rem;
 	}
 
