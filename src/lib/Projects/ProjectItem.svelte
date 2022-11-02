@@ -126,8 +126,6 @@
 		position: absolute;
 		display: flex;
 		flex-direction: column;
-		// justify-content: center;
-		// align-items: center;
 		text-align: center;
 		top: 0;
 		bottom: 0;

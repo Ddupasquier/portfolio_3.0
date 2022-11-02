@@ -2,13 +2,17 @@
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import { projects } from '$lib/data/projects';
+	import type { Project } from '$lib/data/projects';
 	import ProjectItem from '$lib/Projects/ProjectItem.svelte';
 
 	let scroll: number;
 	let loaded = false;
 	$: visible = scroll > 1000 && scroll < 5000;
 
+	let projectsList: Project[] = [];
+
 	onMount(() => {
+		projectsList = projects;
 		loaded = true;
 	});
 </script>
@@ -17,7 +21,7 @@
 
 {#if visible && loaded}
 	<div class="gallery">
-		{#each projects.sort(() => Math.random() - 0.5) as project}
+		{#each projectsList.sort(() => Math.random() - 0.5) as project}
 			<ProjectItem {project} />
 		{/each}
 	</div>
@@ -29,7 +33,6 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 1rem;
-		// min-height: 800px;
 	}
 
 	@media (max-width: 968px) {

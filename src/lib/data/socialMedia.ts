@@ -18,19 +18,4 @@ export const socialMedias: SocialMedia[] = [
 		link: 'https://github.com/Ddupasquier',
 		icon: GithubIcon
 	},
-	// {
-	// 	name: 'Youtube',
-	// 	link: '',
-	// 	icon: ':)'
-	// },
-	// {
-	// 	name: 'Codepen',
-	// 	link: '',
-	// 	icon: ':)'
-	// },
-	// {
-	// 	name: 'Discord',
-	// 	link: '',
-	// 	icon: ':)'
-	// }
 ];
