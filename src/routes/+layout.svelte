@@ -16,6 +16,7 @@
 
 <GlobalStylesProvider>
 	<div class="main-container" class:hideScroll>
+		<div class="behindfold" />
 		<AboveFold />
 		{#if aboveVisible}
 			<Snow />
@@ -50,5 +51,19 @@
 
 	main {
 		z-index: 3;
+	}
+
+	.behindfold {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 40rem;
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.5) 0%,
+			rgba(255, 255, 255, 0.5) 100%
+		);
+		z-index: -1;
 	}
 </style>
