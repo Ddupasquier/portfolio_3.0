@@ -67,7 +67,6 @@
 
 	.gallery-item {
 		position: relative;
-		cursor: pointer;
 		max-height: 30rem;
 	}
 
@@ -78,6 +77,7 @@
 		border-radius: 0.3rem;
 		filter: grayscale(100%);
 		transition: filter 0.6s;
+		cursor: pointer;
 		&:hover {
 			filter: grayscale(0);
 		}
@@ -119,6 +119,7 @@
 		transition: transform 0.6s;
 		transform-origin: right;
 		transform: scaleX(0);
+		cursor: default;
 	}
 
 	.shown {
@@ -160,53 +161,13 @@
 		padding: 0;
 		margin-bottom: 1rem;
 		.tech-item {
-			font-size: 0.8rem;
+			font-size: 0.7rem;
 			font-weight: 400;
 			text-align: center;
 			margin: 0.2rem;
-			padding: 0.5rem 1rem;
 			border-radius: 5px;
-			background: #3a3a3a;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-			transition: 0.5s;
 			cursor: default;
 			transition: all 0.6s;
-			&:nth-child(odd) {
-				&:hover {
-					transform: scale(1.2) rotate(5deg);
-				}
-			}
-			&:nth-child(even) {
-				&:hover {
-					transform: scale(1.2) rotate(-5deg);
-				}
-			}
-		}
-
-		@media (max-width: 768px) {
-			.tech-item {
-				font-size: 0.7rem;
-				font-weight: 400;
-				text-align: center;
-				margin: 0.2rem;
-				padding: 0;
-				border-radius: 5px;
-				background: none;
-				box-shadow: none;
-				transition: none;
-				cursor: default;
-				transition: all 0.6s;
-				&:nth-child(odd) {
-					&:hover {
-						transform: none;
-					}
-				}
-				&:nth-child(even) {
-					&:hover {
-						transform: none;
-					}
-				}
-			}
 		}
 	}
 </style>
