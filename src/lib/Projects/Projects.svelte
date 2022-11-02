@@ -19,13 +19,13 @@
 
 <svelte:window bind:scrollY={scroll} />
 
-{#if visible && loaded}
+<!-- {#if visible && loaded} -->
 	<div class="gallery">
 		{#each projectsList.sort(() => Math.random() - 0.5) as project}
 			<ProjectItem {project} />
 		{/each}
 	</div>
-{/if}
+<!-- {/if} -->
 
 <style lang="scss">
 	@use 'src/styles/imports/colors.scss' as colors;

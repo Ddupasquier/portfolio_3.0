@@ -50,6 +50,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 		gap: 0.5rem;
 		a {
 			transition: all 0.2s ease-in-out;

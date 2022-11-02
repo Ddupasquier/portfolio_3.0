@@ -35,7 +35,6 @@
 		alt={project.title}
 		class="gallery-image"
 		in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
-		out:fade={{ duration }}
 	/>
 
 	<div class="gallery-item-info" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>

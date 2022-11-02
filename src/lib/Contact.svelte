@@ -26,7 +26,8 @@
             align-self: center;
 		flex-direction: column;
 		height: 100%;
-		width: fit-content;
+		width: 80%;
+		max-width: 500px;
 		text-align: center;
 		padding: 2rem;
             margin: auto;
