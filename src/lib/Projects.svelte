@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import { projects } from '$lib/data/projects';
-	import {pics} from '$lib/data/pics';
+	// import {pics} from '$lib/data/pics';
 
 	let scroll: number;
 	$: visible = scroll > 1000 && scroll < 5000;
@@ -15,29 +15,26 @@
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	};
 
-	const items = [];
-	for (let i = 0; i < projects.length; i++) {
-		if (projects[i] !== undefined) items.push(projects[i]);
-		if (pics[i] !== undefined) items.push(pics[i]);
-	}
+	// const items = [];
+	// for (let i = 0; i < projects.length; i++) {
+	// 	if (projects[i] !== undefined) items.push(projects[i]);
+	// 	if (pics[i] !== undefined) items.push(pics[i]);
+	// }
 
 	onMount(() => {
 		loaded = true;
-		console.log(items)
+		// console.log(items)
 	});
-
-	// add projects and pics to an array, but alternating between them
-	// so that the order is always the same
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
 {#if visible}
 	<div class="gallery">
-		<!-- {#each projects.sort(() => Math.random() - 0.5) as project}
+		{#each projects.sort(() => Math.random() - 0.5) as project}
 			<div class="gallery-item">
 				<img
-					src={project.image}
+					src={project.src}
 					alt={project.title}
 					class="gallery-image"
 					in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
@@ -61,8 +58,8 @@
 					</ul>
 				{/if}
 			</div>
-		{/each} -->
-		{#each items as item}
+		{/each}
+		<!-- {#each items as item}
 			{#if item && item.kind === 'image'}
 				<div class="gallery-item">
 					<img
@@ -82,7 +79,6 @@
 						in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
 						out:fade={{ duration }}
 					/>
-					<!-- {#if loaded} -->
 						<div class="gallery-item-info" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
 							<div class="title">
 								{item.title}
@@ -98,10 +94,9 @@
 								</li>
 							{/each}
 						</ul>
-					<!-- {/if} -->
 				</div>
 			{/if}
-		{/each}
+		{/each} -->
 	</div>
 {/if}
 
