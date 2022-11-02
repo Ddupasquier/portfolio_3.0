@@ -79,7 +79,7 @@
 		transition: filter 0.6s;
 		cursor: pointer;
 		&:hover {
-			filter: grayscale(0);
+			filter: grayscale(0) saturate(200%);
 		}
 	}
 

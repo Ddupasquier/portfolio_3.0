@@ -2,6 +2,7 @@
 	import Projects from '$lib/Projects/Projects.svelte';
 	import BottomSpacer from '$lib/BottomSpacer.svelte';
 	import About from '$lib/About.svelte';
+	import Banner from '$lib/Banner.svelte';
 
 	let scroll: number = 0;
 </script>
@@ -10,6 +11,9 @@
 
 <div class="container" style:transform={`translateY(${scroll / 3}px)`}>
 	<About />
+	<Banner>
+		Some Stuff That I've Done:
+	</Banner>
 	<Projects />
 	<BottomSpacer />
 </div>
