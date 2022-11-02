@@ -74,7 +74,7 @@ export const projects: Project[] = [
 	{
 		kind: 'proj',
 		title: 'PokeDex',
-		description: 'A React app to display a list of Pokemon.',
+		description: 'A vanilla JS app to display a list of Pokemon.',
             when: 'December 2021',
 		links: {
 			github: 'https://github.com/Ddupasquier/Pokedex-1.0',
