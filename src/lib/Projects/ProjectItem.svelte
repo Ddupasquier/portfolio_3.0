@@ -73,9 +73,11 @@
 
 <style lang="scss">
 	@use 'src/styles/imports/colors' as colors;
+	@use 'src/styles/imports/fonts' as font;
 
 	.gallery-item {
 		position: relative;
+		font-family: font.$noto-sans;
 	}
 
 	@media screen and (max-width: 1700px) {

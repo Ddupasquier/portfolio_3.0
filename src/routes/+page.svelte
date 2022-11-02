@@ -4,6 +4,7 @@
 	import About from '$lib/About.svelte';
 	import Banner from '$lib/Banner.svelte';
 	import Contact from '$lib/Contact.svelte';
+	import Recommendations from '$lib/Recommendations.svelte';
 
 	let scroll: number = 0;
 </script>
@@ -20,7 +21,10 @@
 		<Banner isSubBanner={true}>Want To Work Together?</Banner>
 		<Contact />
 	</section>
-	<!-- <BottomSpacer /> -->
+	<section>
+		<Recommendations />
+	</section>
+	<BottomSpacer />
 </div>
 
 <style lang="scss">
@@ -38,5 +42,6 @@
 
 	section {
 		justify-content: center;
+		width: 100%;
 	}
 </style>

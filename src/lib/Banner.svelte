@@ -13,13 +13,15 @@
 </div>
 
 <style lang="scss">
+	@use 'src/styles/imports/fonts' as font;
 	.banner-container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
 		height: 100%;
-		width: 100%;
+		width: fit-content;
+		margin: auto;
 		margin-bottom: 1rem;
 		text-align: center;
 	}
@@ -44,7 +46,8 @@
 		font-size: 3rem;
 		font-weight: 800;
 		text-transform: uppercase;
-		font-family: 'Open Sans Pro', sans-serif;
+		// font-family: 'Open Sans Pro', sans-serif;
+		font-family: font.$banner;
 		color: white;
 	}
 </style>

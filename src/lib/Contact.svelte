@@ -18,6 +18,7 @@
 </div>
 
 <style lang="scss">
+	@use 'src/styles/imports/fonts' as font;
 	.contact {
 		display: flex;
 		align-items: center;
@@ -38,10 +39,10 @@
 	}
 
 	li {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 		font-weight: 800;
 		text-transform: uppercase;
-		font-family: 'Open Sans Pro', sans-serif;
+		font-family: font.$noto-sans;
 		color: #22ff7e;
 		margin: 1rem;
 	}

@@ -45,6 +45,7 @@
 </div>
 
 <style lang="scss">
+	@use 'src/styles/imports/fonts' as font;
 	.about {
 		width: 100%;
 		height: 100%;
@@ -112,6 +113,7 @@
 			padding: 1rem;
 		}
 		h1 {
+			font-family: font.$league-gothic;
 			font-size: 2.5rem;
 			font-weight: 700;
 			text-align: center;
@@ -119,6 +121,7 @@
 			color: rgb(255, 255, 255);
 		}
 		p {
+			font-family: font.$montserrat;
 			font-size: 1rem;
 			font-weight: 600;
 			text-align: center;
@@ -134,6 +137,7 @@
 			list-style: none;
 			padding: 0;
 			li {
+				font-family: font.$noto-sans;
 				font-size: 1.2rem;
 				font-weight: 400;
 				text-align: center;
