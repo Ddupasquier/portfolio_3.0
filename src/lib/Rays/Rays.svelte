@@ -23,7 +23,6 @@
 	svg {
 		position: absolute;
 		top: 150rem;
-		width: 100%;
 		overflow: hidden;
 		z-index: 1;
 	}

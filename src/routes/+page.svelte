@@ -3,6 +3,7 @@
 	import BottomSpacer from '$lib/BottomSpacer.svelte';
 	import About from '$lib/About.svelte';
 	import Banner from '$lib/Banner.svelte';
+	import Contact from '$lib/Contact.svelte';
 
 	let scroll: number = 0;
 </script>
@@ -15,6 +16,7 @@
 		Some Stuff That I've Done:
 	</Banner>
 	<Projects />
+	<Contact />
 	<BottomSpacer />
 </div>
 

@@ -13,7 +13,7 @@
 		width: fit-content;
 	}
 	h2 {
-		font-size: 3rem;
+		font-size: 4rem;
 		font-weight: 800;
 		text-transform: uppercase;
 		font-family: 'Open Sans Pro', sans-serif;
