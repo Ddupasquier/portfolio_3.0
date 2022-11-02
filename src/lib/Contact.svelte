@@ -1,11 +1,55 @@
 <script script>
-
 </script>
 
 <div class="contact">
-
+	<ul>
+		<li>dylandupasquier@gmail.com</li>
+		<li>
+			<a
+				href="https://www.linkedin.com/in/dylan-dupasquier/"
+				target="_blank"
+				rel="noopener noreferrer">Linkedin</a
+			>
+		</li>
+		<li>
+			<a href="https://github.com/Ddupasquier" target="_blank" rel="noopener noreferrer">Github</a>
+		</li>
+	</ul>
 </div>
 
 <style lang="scss">
+	.contact {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		height: 100%;
+		width: fit-content;
+		text-align: center;
+		padding: 2rem;
+		background: black;
+		border-radius: 0.5rem;
+	}
 
+	ul {
+		list-style: none;
+	}
+
+	li {
+		font-size: 1.5rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		font-family: 'Open Sans Pro', sans-serif;
+		color: #22ff7e;
+		margin: 1rem;
+	}
+
+	a {
+		color: #22ff7e;
+		text-decoration: none;
+		transition: all 0.6s;
+		&:hover {
+			color: #b744ff;
+		}
+	}
 </style>

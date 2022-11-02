@@ -12,12 +12,11 @@
 
 <div class="container" style:transform={`translateY(${scroll / 3}px)`}>
 	<About />
-	<Banner>
-		Some Stuff That I've Done:
-	</Banner>
+	<Banner isSubBanner={false}>Some Stuff That I've Done:</Banner>
 	<Projects />
+	<Banner isSubBanner={true}>Want To Work Together?</Banner>
 	<Contact />
-	<BottomSpacer />
+	<!-- <BottomSpacer /> -->
 </div>
 
 <style lang="scss">
