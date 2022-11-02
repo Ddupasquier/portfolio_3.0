@@ -3,7 +3,7 @@ import pokemon from '$lib/assets/pokemon.webp';
 import ss from '$lib/assets/ss.webp';
 import np from '$lib/assets/np.webp';
 
-interface Project {
+export interface Project {
 	kind: string;
 	title: string;
 	description: string;
@@ -107,6 +107,7 @@ export const projects: Project[] = [
 		],
 		src: np
 	},
+	
 	// {
 	// 	title: 'MarketProphit',
 	// 	description: 'Headed front-end development of a cryptocurrency marketing platform',

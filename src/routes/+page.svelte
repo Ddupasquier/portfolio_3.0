@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Projects from '$lib/Projects.svelte';
+	import Projects from '$lib/Projects/Projects.svelte';
 	import BottomSpacer from '$lib/BottomSpacer.svelte';
 	import About from '$lib/About.svelte';
 
