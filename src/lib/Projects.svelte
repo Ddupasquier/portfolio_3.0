@@ -111,6 +111,7 @@
 	.gallery-item {
 		position: relative;
 		cursor: pointer;
+		max-height: 30rem;
 	}
 
 	@media (min-width: 768px) {
