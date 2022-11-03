@@ -9,7 +9,7 @@
 <div class="front-waves" style:transform={`translateY(${scroll / 5}px)`}>
 	<img src={frontwaves} alt="front waves" />
 </div>
-<div  style:transform={`translateY(${scroll / 5}px)`}>
+<div  style:transform={`translateY(${scroll / 5}px)`} height="100%" width="100%">
 	<Snow />
 </div>
 

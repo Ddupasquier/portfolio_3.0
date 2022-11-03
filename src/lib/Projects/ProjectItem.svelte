@@ -149,7 +149,7 @@
 	}
 
 	.more-btn {
-		color: colors.$purple;
+		color: rgb(199, 0, 199);
 		font-size: 0.9rem;
 		font-weight: 800;
 		padding: 0.5rem;

@@ -3,7 +3,7 @@
 </script>
 
 <div class="back-waves">
-	<img src={backwaves} alt="backwaves" />
+	<img src={backwaves} alt="backwaves" height="100%" width="100%" />
 </div>
 
 <style lang="scss">
