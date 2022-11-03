@@ -1,26 +1,17 @@
 <script lang="ts">
-	import { fade, fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import Logo from './Logo/Logo.svelte';
 	let scroll: number = 0;
-	let screenWidth: number = 0;
 	$: visible = scroll < 640;
-	$: mobileWidth = screenWidth < 640;
-	console.log(screenWidth)
 </script>
 
-<svelte:window bind:scrollY={scroll} bind:innerWidth={screenWidth} />
+<svelte:window bind:scrollY={scroll} />
 
 <header>
 	{#if visible}
-		{#if mobileWidth}
-			<div out:fade={{ duration: 10 }}>
-				<Logo />
-			</div>
-		{:else}
-			<div out:fly={{ duration: 10 }}>
-				<Logo />
-			</div>
-		{/if}
+		<div out:fade={{ duration: 10 }}>
+			<Logo />
+		</div>
 	{/if}
 </header>
 
