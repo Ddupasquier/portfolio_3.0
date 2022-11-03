@@ -1,6 +1,6 @@
 <script lang="ts">
 	import backwaves from './backwaves.svg';
-	</script>
+</script>
 
 <div class="back-waves">
 	<img src={backwaves} alt="backwaves" />
@@ -19,6 +19,4 @@
 			max-height: 220rem;
 		}
 	}
-
-	
 </style>

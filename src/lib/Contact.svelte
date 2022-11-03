@@ -23,15 +23,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-            align-self: center;
+		align-self: center;
 		flex-direction: column;
 		height: 100%;
 		width: 80%;
 		max-width: 500px;
 		text-align: center;
 		padding: 1rem;
-            margin: auto;
-		background: rgb(0, 0, 0, .75);
+		margin: auto;
+		background: rgb(0, 0, 0, 0.75);
 		border-radius: 0.5rem;
 	}
 
@@ -48,19 +48,25 @@
 		margin: 1rem;
 	}
 
-	// on mobile li font size is smaller
-	@media (max-width: 500px) {
-		li {
-			font-size: 1rem;
-		}
-	}
-
 	a {
 		color: #22ff7e;
 		text-decoration: none;
 		transition: all 0.6s;
 		&:hover {
 			color: #b744ff;
+		}
+	}
+	@media (max-width: 500px) {
+		li {
+			font-size: 1rem;
+		}
+		a {
+			color: #22ff7e;
+			text-decoration: none;
+			transition: all 0.6s;
+			&:hover {
+				color: #b744ff;
+			}
 		}
 	}
 </style>

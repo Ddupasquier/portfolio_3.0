@@ -1,14 +1,15 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import Logo from './Logo/Logo.svelte';
 	let scroll: number = 0;
-	$: visible = scroll < 670;
+	$: visible = scroll < 640;
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
 <header>
 	{#if visible}
-		<div>
+		<div out:fade={{ duration: 10 }}>
 			<Logo />
 		</div>
 	{/if}
@@ -28,6 +29,12 @@
 		div {
 			position: fixed;
 			top: 0;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		header {
+			z-index: 2;
 		}
 	}
 </style>

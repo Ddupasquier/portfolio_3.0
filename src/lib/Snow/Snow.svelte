@@ -39,15 +39,14 @@
 		stackoverflow
 	];
 
-	let scroll: number = 0;
 	let screenWidth: number = 0;
 
 	$: iconNumber = Math.floor(screenWidth / 30);
 </script>
 
-<svelte:window bind:scrollY={scroll} bind:innerWidth={screenWidth} />
+<svelte:window bind:innerWidth={screenWidth} />
 
-<div class="snow-container" style:transform={`translateY(${scroll / 3}px)`}>
+<div class="snow-container">
 	<ul>
 		{#each Array(iconNumber) as _, i}
 			<li class="snowflake">
@@ -65,7 +64,7 @@
 <style lang="scss">
 	.snow-container {
 		position: absolute;
-		top: 55rem;
+		// top: 55rem;
 		width: 100%;
 		height: 50rem;
 		align-self: center;

@@ -18,11 +18,11 @@
 	<div class="main-container" class:hideScroll>
 		<div class="behindfold" />
 		<AboveFold />
-		<!-- {#if aboveVisible} -->
-			<Snow />
+		{#if aboveVisible}
+			<!-- <Snow /> -->
 			<BackWaves />
 			<FrontWaves />
-		<!-- {/if} -->
+		{/if}
 		<main class="hidescroll">
 			<slot />
 		</main>

@@ -9,7 +9,7 @@
 	let scroll: number = 0;
 </script>
 
-<svelte:window on:scroll={(e) => (scroll = window.scrollY)} />
+<svelte:window bind:scrollY={scroll}  />
 
 <div class="container" style:transform={`translateY(${scroll / 3}px)`}>
 	<About />

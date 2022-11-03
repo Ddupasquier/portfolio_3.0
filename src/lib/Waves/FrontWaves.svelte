@@ -1,7 +1,7 @@
 <script lang="ts">
+	import Snow from '$lib/Snow/Snow.svelte';
 	import frontwaves from './frontwaves.svg';
 	let scroll: number;
-
 </script>
 
 <svelte:window bind:scrollY={scroll} />
@@ -9,10 +9,12 @@
 <div class="front-waves" style:transform={`translateY(${scroll / 5}px)`}>
 	<img src={frontwaves} alt="front waves" />
 </div>
+<div  style:transform={`translateY(${scroll / 5}px)`}>
+	<Snow />
+</div>
 
 <style lang="scss">
-
-.front-waves {
+	.front-waves {
 		position: absolute;
 		top: 35rem;
 		left: 0;
