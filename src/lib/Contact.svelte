@@ -29,7 +29,7 @@
 		width: 80%;
 		max-width: 500px;
 		text-align: center;
-		padding: 1rem;
+		padding: 2rem;
 		margin: auto;
 		background: rgb(0, 0, 0, 0.75);
 		border-radius: 0.5rem;
