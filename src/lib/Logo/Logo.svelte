@@ -1,10 +1,3 @@
-<script lang="ts">
-	let scroll: number = 0;
-	// $: scale = 1 - scroll / 1000;
-</script>
-
-<!-- <svelte:window bind:scrollY={scroll} /> -->
-
 <div class="logo-container">
 	<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
 		<g>
@@ -45,8 +38,8 @@
 			>
 		</g>
 	</svg>
-	<div class="dylan">
-		<ul>
+	<div class="dylan" aria-label="Dylan">
+		<ul aria-hidden="true">
 			<li class="placeholder" />
 			<li>y</li>
 			<li>l</li>
@@ -54,8 +47,8 @@
 			<li>n</li>
 		</ul>
 	</div>
-	<div class="dupasquier">
-		<ul>
+	<div class="dupasquier" aria-label="Dupasquier">
+		<ul aria-hidden="true">
 			<li class="placeholder" />
 			<li>u</li>
 			<li>p</li>
@@ -68,8 +61,8 @@
 			<li>r</li>
 		</ul>
 	</div>
-	<div class="role">
-		<ul>
+	<div class="role" aria-label="Front End Developer">
+		<ul aria-hidden="true">
 			<li>F</li>
 			<li>r</li>
 			<li>o</li>

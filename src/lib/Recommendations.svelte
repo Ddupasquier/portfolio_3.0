@@ -7,7 +7,6 @@
 
 	onMount(async () => {
 		recommendationsList = recommendations;
-		console.log(recommendationsList);
 	});
 </script>
 
@@ -40,9 +39,6 @@
 		max-width: 1000px;
 		margin: auto;
 	}
-
-	// on mobile recommendations max width 90%
-	
 
 	.recommendation {
 		display: flex;
