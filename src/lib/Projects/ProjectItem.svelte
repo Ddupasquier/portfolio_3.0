@@ -52,7 +52,9 @@
 		</div>
 		<section>
 			<div class="links">
+				{#if (project.links.github)}
 				<a href={project.links.github} target="_blank" rel="noopener noreferrer"> Github </a> |
+				{/if}
 				<a href={project.links.live} target="_blank" rel="noopener noreferrer">Live</a>
 			</div>
 

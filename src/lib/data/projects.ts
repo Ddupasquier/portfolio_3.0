@@ -2,6 +2,7 @@ import ass from '$lib/assets/ass.webp';
 import pokemon from '$lib/assets/pokemon.webp';
 import ss from '$lib/assets/ss.webp';
 import np from '$lib/assets/np.webp';
+import pinched from '$lib/assets/pinched.png';
 
 export interface Project {
 	kind: string;
@@ -9,7 +10,7 @@ export interface Project {
 	description: string;
 	when: string;
 	links: {
-		github: string | null;
+		github?: string | null;
 		live: string | null;
 	};
 	tech: string[];
@@ -106,17 +107,27 @@ export const projects: Project[] = [
 			'BCrypt'
 		],
 		src: np
+	},
+	{
+		kind: 'proj',
+		title: 'Pinched Parables',
+		description:
+			'Get creative with Pinched Parables - the ultimate story book creator for kids! Stamp your way to an exciting adventure with our crab-tivating collection of stamps. Join the shell-abration of imagination and storytelling today!',
+		when: 'Dec 2022 - Present',
+		links: {
+			live: 'https://stories-client.vercel.app/'
+		},
+		tech: [
+			'SvelteKit',
+			'Supabase',
+			'PostgreSQL',
+			'HTML',
+			'CSS',
+			'Typescript',
+			'Git',
+			'Github',
+			'Vercel',
+		],
+		src: pinched
 	}
-
-	// {
-	// 	title: 'MarketProphit',
-	// 	description: 'Headed front-end development of a cryptocurrency marketing platform',
-	// when: '2020',
-	// 	links: {
-	// 		github: '',
-	// 		live: ''
-	// 	},
-	// 	tech: ['Svelte', 'SvelteKit', 'SCSS', 'Cheerio', 'D3', 'Chart.js', 'Javascript', 'HTML5'],
-	// 	src: ass
-	// }
 ];

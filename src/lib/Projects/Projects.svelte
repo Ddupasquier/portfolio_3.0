@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
+import { onMount } from 'svelte';
 	import { projects } from '$lib/data/projects';
 	import type { Project } from '$lib/data/projects';
 	import ProjectItem from '$lib/Projects/ProjectItem.svelte';
@@ -15,17 +14,26 @@
 		projectsList = projects;
 		loaded = true;
 	});
+
+	// $: sortedProjects if project.when includes 'Present' keep at beginning of list, otherwise, sort by date
+	$: sortedProjects = projectsList.sort((a, b) => {
+		if (a.when.includes('Present')) {
+			return -1;
+		} else if (b.when.includes('Present')) {
+			return 1;
+		} else {
+			return a.when.localeCompare(b.when);
+		}
+	});
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 
-<!-- {#if visible && loaded} -->
 	<div class="gallery">
-		{#each projectsList.sort(() => Math.random() - 0.5) as project}
+		{#each sortedProjects as project}
 			<ProjectItem {project} />
 		{/each}
 	</div>
-<!-- {/if} -->
 
 <style lang="scss">
 	@use 'src/styles/imports/colors.scss' as colors;
