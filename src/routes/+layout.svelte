@@ -5,7 +5,7 @@
 	import BackWaves from '$lib/Waves/BackWaves.svelte';
 	import Rays from '$lib/Rays/Rays.svelte';
 	import Footer from '$lib/Footer.svelte';
-	import Snow from '$lib/Snow/Snow.svelte';
+	import Analytics from '$lib/Analytics.svelte';
 
 	let hideScroll = true;
 	let scroll: number = 0;
@@ -14,12 +14,13 @@
 
 <svelte:window bind:scrollY={scroll} />
 
+<Analytics />
+
 <GlobalStylesProvider>
 	<div class="main-container" class:hideScroll>
 		<div class="behindfold" />
 		<AboveFold />
 		{#if aboveVisible}
-			<!-- <Snow /> -->
 			<BackWaves />
 			<FrontWaves />
 		{/if}
