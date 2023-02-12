@@ -79,6 +79,7 @@
 	.gallery-item {
 		position: relative;
 		font-family: font.$noto-sans;
+		justify-self: center;
 	}
 
 	@media screen and (max-width: 1700px) {

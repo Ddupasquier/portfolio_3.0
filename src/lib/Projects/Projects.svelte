@@ -1,5 +1,5 @@
 <script lang="ts">
-import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import { projects } from '$lib/data/projects';
 	import type { Project } from '$lib/data/projects';
 	import ProjectItem from '$lib/Projects/ProjectItem.svelte';
@@ -29,11 +29,11 @@ import { onMount } from 'svelte';
 
 <svelte:window bind:scrollY={scroll} />
 
-	<div class="gallery">
-		{#each sortedProjects as project}
-			<ProjectItem {project} />
-		{/each}
-	</div>
+<div class="gallery">
+	{#each sortedProjects as project}
+		<ProjectItem {project} />
+	{/each}
+</div>
 
 <style lang="scss">
 	@use 'src/styles/imports/colors.scss' as colors;
