@@ -3,20 +3,22 @@
 	import { onMount } from 'svelte';
 	import type { Project } from '$lib/data/projects';
 	import WideButton from '$lib/WideButton.svelte';
+	import { createLoadObserver } from '$lib/utils';
+	import Loading from '$lib/Loading.svelte';
 
 	export let project: Project;
 
 	const duration = 1000;
 	const minFadeDelay = 100;
 	const maxFadeDelay = 300;
-	let loaded = false;
 
 	const random = (min: number, max: number) => {
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	};
 
-	onMount(() => {
-		loaded = true;
+	$: loading = true;
+	const onLoad = createLoadObserver(() => {
+		loading = false;
 	});
 
 	$: more = '';
@@ -35,6 +37,9 @@
 		alt={project.title}
 		class="gallery-image"
 		in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
+		style="visibility: {loading ? 'hidden' : 'visible'}"
+		use:onLoad
+		loading="lazy"
 	/>
 
 	<div class="gallery-item-info" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
@@ -52,8 +57,8 @@
 		</div>
 		<section>
 			<div class="links">
-				{#if (project.links.github)}
-				<a href={project.links.github} target="_blank" rel="noopener noreferrer"> Github </a> |
+				{#if project.links.github}
+					<a href={project.links.github} target="_blank" rel="noopener noreferrer"> Github </a> |
 				{/if}
 				<a href={project.links.live} target="_blank" rel="noopener noreferrer">Live</a>
 			</div>
@@ -70,6 +75,9 @@
 			{/each}
 		</ul>
 	</div>
+	{#if loading}
+		<Loading />
+	{/if}
 </div>
 
 <style lang="scss">
