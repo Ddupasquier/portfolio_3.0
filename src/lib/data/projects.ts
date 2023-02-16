@@ -11,7 +11,7 @@ export interface Project {
 	when: string;
 	links: {
 		github?: string | null;
-		live: string | null;
+		live?: string | null;
 	};
 	tech: string[];
 	src: string | null;
@@ -54,7 +54,6 @@ export const projects: Project[] = [
 		when: 'April 2022',
 		links: {
 			github: 'https://github.com/Ddupasquier/phase-5-cssreact-library',
-			live: 'https://simplestyles.herokuapp.com/'
 		},
 		tech: [
 			'React.js',
@@ -91,7 +90,6 @@ export const projects: Project[] = [
 		when: 'March 2022',
 		links: {
 			github: 'https://github.com/Ddupasquier/phase-4-project-mincho-dylandupasquier',
-			live: 'https://national-parks-fi.herokuapp.com/'
 		},
 		tech: [
 			'React.js',

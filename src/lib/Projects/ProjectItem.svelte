@@ -60,7 +60,9 @@
 				{#if project.links.github}
 					<a href={project.links.github} target="_blank" rel="noopener noreferrer"> Github </a> |
 				{/if}
+				{#if project.links.live}
 				<a href={project.links.live} target="_blank" rel="noopener noreferrer">Live</a>
+				{/if}
 			</div>
 
 			<div class="description-text">
