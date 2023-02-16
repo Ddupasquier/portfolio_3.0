@@ -26,7 +26,7 @@ export const projects: Project[] = [
 		when: 'June 2022 - Present',
 		links: {
 			github: 'https://github.com/Ddupasquier/instaassistant-client',
-			live: 'Under Construction'
+			live: 'https://www.antisocialsuite.io'
 		},
 		tech: [
 			'React.js',
