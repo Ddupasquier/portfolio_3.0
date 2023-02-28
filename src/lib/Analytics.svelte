@@ -4,7 +4,7 @@
 
   $: {
     if (typeof gtag !== 'undefined') {
-      gtag('config', ' G-92W1LXLHQT', {
+      gtag('config', 'G-92W1LXLHQT', {
         page_title: document.title,
         page_path: $page.url.pathname,
       });
