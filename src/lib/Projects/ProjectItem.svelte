@@ -89,7 +89,7 @@
 	.gallery-item {
 		position: relative;
 		font-family: font.$noto-sans;
-		width: 20rem;
+		width: 25rem;
 		aspect-ratio: 16/9;
 	}
 
@@ -114,7 +114,7 @@
 		background-color: rgba(0, 0, 0, 0.5);
 		color: #fff;
 		font-size: 1.2rem;
-		border-radius: 0 0 0.3rem 0;
+		border-radius: 0.3rem 0 0.3rem 0;
 		.title {
 			padding: 0.5rem 0.5rem 0 0.5rem;
 		}
@@ -220,7 +220,7 @@
 		}
 	}
 
-	@media screen and (max-width: 780px) {
+	@media screen and (max-width: 960px) {
 		.gallery-item {
 			width: 100%;
 		}
