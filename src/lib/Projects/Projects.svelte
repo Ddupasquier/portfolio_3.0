@@ -38,21 +38,25 @@
 <style lang="scss">
 	@use 'src/styles/imports/colors.scss' as colors;
 	.gallery {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-gap: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+		// grid-template-columns: repeat(4, 1fr);
+		// grid-gap: 1rem;
 		width: 95%;
+
 	}
 
-	@media (max-width: 968px) {
-		.gallery {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
+	// @media (max-width: 968px) {
+	// 	.gallery {
+	// 		grid-template-columns: repeat(2, 1fr);
+	// 	}
+	// }
 
-	@media (max-width: 480px) {
-		.gallery {
-			grid-template-columns: 1fr;
-		}
-	}
+	// @media (max-width: 480px) {
+	// 	.gallery {
+	// 		grid-template-columns: 1fr;
+	// 	}
+	// }
 </style>

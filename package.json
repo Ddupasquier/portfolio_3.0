@@ -14,6 +14,7 @@
 	},
 	"dependencies": {
 		"@types/gtag.js": "^0.0.12",
+		"mysvelte-ui": "^0.0.15",
 		"node-sass": "^7.0.3"
 	},
 	"devDependencies": {

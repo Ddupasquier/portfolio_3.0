@@ -89,19 +89,8 @@
 	.gallery-item {
 		position: relative;
 		font-family: font.$noto-sans;
-		justify-self: center;
-	}
-
-	@media screen and (max-width: 1700px) {
-		.gallery-item {
-			min-height: 20rem;
-		}
-	}
-
-	@media screen and (max-width: 1450px) {
-		.description-text {
-			font-size: 1rem;
-		}
+		width: 20rem;
+		aspect-ratio: 16/9;
 	}
 
 	.gallery-image {
@@ -222,6 +211,24 @@
 			&:hover {
 				background-color: rgba(255, 255, 255, 0.5);
 			}
+		}
+	}
+
+	@media screen and (max-width: 1557px) {
+		.description-text {
+			font-size: 1rem;
+		}
+	}
+
+	@media screen and (max-width: 780px) {
+		.gallery-item {
+			width: 100%;
+		}
+		.description {
+			border-radius: 0;
+		}
+		.description-text {
+			font-size: 1.2rem;
 		}
 	}
 </style>
