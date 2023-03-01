@@ -15,7 +15,8 @@
 	"dependencies": {
 		"@types/gtag.js": "^0.0.12",
 		"mysvelte-ui": "^0.0.15",
-		"node-sass": "^7.0.3"
+		"node-sass": "^7.0.3",
+		"octokit": "^2.0.14"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.25.0",

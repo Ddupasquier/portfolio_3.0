@@ -1,4 +1,6 @@
 <script lang="ts">
+	// export let data: any;
+
 	import Projects from '$lib/Projects/Projects.svelte';
 	import BottomSpacer from '$lib/BottomSpacer.svelte';
 	import About from '$lib/About.svelte';
@@ -7,6 +9,7 @@
 	import Recommendations from '$lib/Recommendations.svelte';
 
 	let scroll: number = 0;
+	// $: console.log(data)
 </script>
 
 <svelte:window bind:scrollY={scroll}  />
