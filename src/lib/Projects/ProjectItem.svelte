@@ -90,7 +90,7 @@
 		position: relative;
 		font-family: font.$noto-sans;
 		width: 25rem;
-		aspect-ratio: 16/9;
+		aspect-ratio: 8/5;
 	}
 
 	.gallery-image {
