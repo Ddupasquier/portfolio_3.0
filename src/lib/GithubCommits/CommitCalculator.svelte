@@ -2,8 +2,6 @@
 	export let color: string = '#bb35dc';
 	export let commitData: ContributionData;
 
-	$: console.log(commitData);
-
 	function getNumWeeks(dailyContributions: string | any[]) {
 		return Math.ceil(dailyContributions.length / 7);
 	}
