@@ -5,14 +5,18 @@
 	import Banner from '$lib/Banner.svelte';
 	import Contact from '$lib/Contact.svelte';
 	import Recommendations from '$lib/Recommendations.svelte';
+	import CommitCalculator from '$lib/GithubCommits/CommitCalculator.svelte';
+	import type { ContributionData } from './+page';
 
+	export let data: ContributionData;
 	let scroll: number = 0;
 </script>
 
-<svelte:window bind:scrollY={scroll}  />
+<svelte:window bind:scrollY={scroll} />
 
 <div class="container" style:transform={`translateY(${scroll / 3}px)`}>
 	<About />
+	<CommitCalculator commitData={data} />
 	<section>
 		<Banner isSubBanner={false}>Some Stuff That I've Done:</Banner>
 		<Projects />
