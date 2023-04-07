@@ -39,6 +39,7 @@
     border-radius: 2px;
     background-color: #bb35dc;
     opacity: 0;
+    cursor: pointer;
     transition: transform 0.3s;
   }
 
@@ -71,13 +72,6 @@
   }
 
   .tooltip {
-    /* position: absolute; */
-    /* bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%); */
-    /* background-color: rgba(0, 0, 0, 0.6);
-    padding: 2px 5px;
-    border-radius: 3px; */
     font-size: 12px;
     color: #fff;
     opacity: 0;
