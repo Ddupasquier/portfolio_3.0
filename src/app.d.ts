@@ -1,9 +1,21 @@
-// See https://kit.svelte.dev/docs/types#app
-// for information about these interfaces
-// and what to do when importing types
-declare namespace App {
-	// interface Locals {}
-	// interface PageData {}
-	// interface Error {}
-	// interface Platform {}
+
+interface ContributionDay {
+	date: string;
+	contributionCount: number;
+}
+
+interface ContributionWeek {
+	contributionDays: ContributionDay[];
+}
+
+interface ContributionData {
+	[x: string]: any;
+	viewer: {
+		contributionsCollection: {
+			contributionCalendar: {
+				totalContributions: number;
+				weeks: ContributionWeek[];
+			};
+		};
+	};
 }

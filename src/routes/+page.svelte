@@ -6,7 +6,6 @@
 	import Contact from '$lib/Contact.svelte';
 	import Recommendations from '$lib/Recommendations.svelte';
 	import CommitCalculator from '$lib/GithubCommits/CommitCalculator.svelte';
-	import type { ContributionData } from './+page';
 
 	export let data: ContributionData;
 	let scroll: number = 0;

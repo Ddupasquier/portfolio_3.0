@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { ContributionData } from 'src/routes/+page';
   export let commitData: ContributionData;
 
   $: console.log(commitData);
