@@ -1,18 +1,72 @@
-import { Octokit } from 'octokit';
+import { request } from 'graphql-request';
 
-const octokit = new Octokit({
-	auth: import.meta.env.VITE_GITHUB_TOKEN
-});
+const GITHUB_GRAPHQL_API = 'https://api.github.com/graphql';
+
+const query = `
+query {
+  viewer {
+    contributionsCollection {
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays {
+            date
+            contributionCount
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+interface ContributionDay {
+      date: string;
+      contributionCount: number;
+}
+
+interface ContributionWeek {
+      contributionDays: ContributionDay[];
+}
+
+export interface ContributionData {
+	  [x: string]: any;
+      viewer: {
+            contributionsCollection: {
+                  contributionCalendar: {
+                        totalContributions: number;
+                        weeks: ContributionWeek[];
+                  };
+            };
+      };
+}
+
 
 export async function load() {
-	const { data } = await octokit.request('GET /repos/{owner}/{repo}/issues', {
-		owner: 'Ddupasquier',
-		repo: 'stories-client'
-	});
+      try {
+            const token = import.meta.env.VITE_GITHUB_TOKEN;
+            const headers = {
+                  'Authorization': `bearer ${token}`,
+            };
+            const data = (await request(GITHUB_GRAPHQL_API, query, {}, headers)) as ContributionData;
 
-      if (data) {
-            return data;
-      } else {
-            throw new Error('Failed to load data')
+            if (data) {
+                  const weeks = data.viewer.contributionsCollection.contributionCalendar.weeks;
+                  const dailyContributions = weeks.flatMap((week) => week.contributionDays);
+
+                  return {
+                        totalContributions: data.viewer.contributionsCollection.contributionCalendar.totalContributions,
+                        dailyContributions,
+                  };
+            } else {
+                  throw new Error('Failed to load data');
+            }
+      } catch (error) {
+            console.error('Error fetching commit history data:', error);
+            return {
+                  status: 500,
+                  error: 'Failed to load commit history data',
+            };
       }
 }
+
