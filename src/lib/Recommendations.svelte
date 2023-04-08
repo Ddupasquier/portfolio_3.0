@@ -35,7 +35,7 @@
 		display: flex;
 		flex-direction: column;
 		align-self: center;
-		gap: 1rem;
+		gap: 3rem;
 		max-width: 1000px;
 		margin: auto;
 	}
