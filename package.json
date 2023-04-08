@@ -15,6 +15,7 @@
 	"dependencies": {
 		"@types/gtag.js": "^0.0.12",
 		"graphql-request": "^5.2.0",
+		"mysvelte-ui": "^0.0.21",
 		"node-sass": "^7.0.3",
 		"octokit": "^2.0.14"
 	},
