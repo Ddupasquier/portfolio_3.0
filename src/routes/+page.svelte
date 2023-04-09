@@ -6,6 +6,7 @@
 	import Contact from '$lib/Contact.svelte';
 	import Recommendations from '$lib/Recommendations.svelte';
 	import CommitCalendar from '$lib/GithubCommits/CommitCalendar.svelte';
+	import Nodes from '$lib/NodesAnimation/Nodes.svelte';
 
 	let scroll: number = 0;
 	let calendarSize: 'small' | 'medium' | 'large' = 'medium';
@@ -39,6 +40,7 @@
 	</section>
 	<BottomSpacer />
 </div>
+<!-- <Nodes /> -->
 
 <style lang="scss">
 	.container {
