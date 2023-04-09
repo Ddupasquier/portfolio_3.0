@@ -1,20 +1,10 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
 	import type { Project } from '$lib/data/projects';
 	import WideButton from '$lib/WideButton.svelte';
 	import { createLoadObserver } from '$lib/utils';
 	import Loading from '$lib/Loading.svelte';
 
 	export let project: Project;
-
-	const duration = 1000;
-	const minFadeDelay = 100;
-	const maxFadeDelay = 300;
-
-	const random = (min: number, max: number) => {
-		return Math.floor(Math.random() * (max - min + 1) + min);
-	};
 
 	$: loading = true;
 	const onLoad = createLoadObserver(() => {
@@ -36,13 +26,12 @@
 		src={project.src}
 		alt={project.title}
 		class="gallery-image"
-		in:fade={{ delay: random(minFadeDelay, maxFadeDelay), duration }}
 		style="visibility: {loading ? 'hidden' : 'visible'}"
 		use:onLoad
 		loading="lazy"
 	/>
 
-	<div class="gallery-item-info" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
+	<div class="gallery-item-info">
 		<div class="title">
 			{project.title}
 		</div>
@@ -51,7 +40,7 @@
 		</div>
 		<button class="more-btn" on:click={descShown}>Details</button>
 	</div>
-	<div class="description {more}" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
+	<div class="description {more}">
 		<div class="less-btn">
 			<WideButton onClick={descHidden}>Close</WideButton>
 		</div>
@@ -71,7 +60,7 @@
 		</section>
 		<ul class="tech">
 			{#each project.tech as tech}
-				<li class="tech-item" in:fade={{ delay: 400, duration }} out:fade={{ duration }}>
+				<li class="tech-item">
 					{tech}
 				</li>
 			{/each}

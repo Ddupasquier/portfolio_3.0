@@ -28,6 +28,7 @@
 		rails,
 		postgresql,
 		svelte,
+		svelte,
 		typescript,
 		sass,
 		git,
