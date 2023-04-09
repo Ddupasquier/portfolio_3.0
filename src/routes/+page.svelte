@@ -5,17 +5,27 @@
 	import Banner from '$lib/Banner.svelte';
 	import Contact from '$lib/Contact.svelte';
 	import Recommendations from '$lib/Recommendations.svelte';
-	import CommitCalculator from '$lib/GithubCommits/CommitCalendar.svelte';
+	import CommitCalendar from '$lib/GithubCommits/CommitCalendar.svelte';
 
-	export let data: ContributionData;
 	let scroll: number = 0;
+	let calendarSize: 'small' | 'medium' | 'large' = 'medium';
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<svelte:window bind:scrollY={scroll} 
+	on:resize={() => {
+		if (window.innerWidth < 900) {
+			calendarSize = 'small';
+		} else if (window.innerWidth < 1300) {
+			calendarSize = 'medium';
+		} else {
+			calendarSize = 'large';
+		}
+	}}
+/>
 
 <div class="container" style:transform={`translateY(${scroll / 3}px)`}>
 	<About />
-	<CommitCalculator commitData={data} />
+	<CommitCalendar gitToken={import.meta.env.VITE_GITHUB_TOKEN} gap={4} size={calendarSize} />
 	<section>
 		<Banner isSubBanner={false}>Some Stuff That I've Done:</Banner>
 		<Projects />
