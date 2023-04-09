@@ -1,4 +1,4 @@
-import {Ass, Pokemon, Ss, Np, Pinched, Mysvelteui} from '$lib/assets';
+import {Ass, Pokemon, Ss, Np, Pinched, Mysvelteui, gitCal} from '$lib/assets';
 
 export interface Project {
 	kind: string;
@@ -135,5 +135,16 @@ export const projects: Project[] = [
 		},
 		tech: ['SvelteKit', 'SCSS', 'Typescript', 'Git', 'Github', 'Vercel', 'NPM'],
 		src: Mysvelteui
+	},
+	{
+		kind: 'proj',
+		title: 'github-commit-calendar',	
+		description: 'A Svelte component to display a user\'s Github commit calendar.',
+		when: 'April 2023',
+		links: {
+			live: 'https://www.npmjs.com/package/github-commit-calendar'
+		},
+		tech: ['SvelteKit', 'SCSS', 'Typescript', 'Git', 'Github', 'Github Pages', 'NPM'],
+		src: gitCal
 	}
 ];
