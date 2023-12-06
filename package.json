@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@types/gtag.js": "^0.0.12",
-		"github-commit-calendar": "^0.0.12",
+		"github-commit-calendar": "^1.1.0",
 		"mysvelte-ui": "^0.0.21"
 	},
 	"devDependencies": {
